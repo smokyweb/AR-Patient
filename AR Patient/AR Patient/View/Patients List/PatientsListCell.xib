@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PatientsListCell" rowHeight="131" id="KGk-i7-Jjw" customClass="PatientsListCell" customModule="AR_Patient" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="481" height="131"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="481" height="131"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xha-6a-SSN">
+                        <rect key="frame" x="16" y="10" width="449" height="111"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="4" translatesAutoresizingMaskIntoConstraints="NO" id="KQ2-it-gTF">
+                                <rect key="frame" x="8" y="8" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="mVi-Sh-inE"/>
+                                    <constraint firstAttribute="height" constant="60" id="rdc-tR-LPb"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" tag="105" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KsN-pb-klU" customClass="IPAutoScalingLabel" customModule="AR_Patient" customModuleProvider="target">
+                                <rect key="frame" x="76" y="8" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" tag="106" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TfD-4M-HYh" customClass="IPAutoScalingLabel" customModule="AR_Patient" customModuleProvider="target">
+                                <rect key="frame" x="133" y="9.5" width="37.5" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" tag="108" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SYMPTOMS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NE4-vw-W8r" customClass="IPAutoScalingLabel" customModule="AR_Patient" customModuleProvider="target">
+                                <rect key="frame" x="76" y="34" width="68.5" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" name="Color_LightBlue"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view tag="-1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PCX-Np-iR7">
+                                <rect key="frame" x="419" y="0.0" width="30" height="20"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Arrow" translatesAutoresizingMaskIntoConstraints="NO" id="RaH-Kg-0vE">
+                                        <rect key="frame" x="10" y="5" width="10" height="10"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="10" id="FeX-eW-XMw"/>
+                                            <constraint firstAttribute="width" constant="10" id="MRR-yt-RdU"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" name="Color_LightBlue"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="Ctf-Uy-Nuj"/>
+                                    <constraint firstItem="RaH-Kg-0vE" firstAttribute="centerY" secondItem="PCX-Np-iR7" secondAttribute="centerY" id="NUK-oO-WJc"/>
+                                    <constraint firstAttribute="width" constant="30" id="U8T-ug-xuU"/>
+                                    <constraint firstItem="RaH-Kg-0vE" firstAttribute="centerX" secondItem="PCX-Np-iR7" secondAttribute="centerX" id="bTt-MP-B0q"/>
+                                </constraints>
+                            </view>
+                            <view alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m4C-aP-od4">
+                                <rect key="frame" x="156.5" y="41" width="276.5" height="1"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="hho-Wr-Ies"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" tag="107" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="hgfjgb" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PFx-lC-V6h" customClass="IPAutoScalingLabel" customModule="AR_Patient" customModuleProvider="target">
+                                <rect key="frame" x="76" y="53.5" width="353" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" tag="107" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="hgfjgb" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xxu-bz-hgK" customClass="IPAutoScalingLabel" customModule="AR_Patient" customModuleProvider="target">
+                                <rect key="frame" x="76" y="82" width="353" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="xxu-bz-hgK" firstAttribute="leading" secondItem="PFx-lC-V6h" secondAttribute="leading" id="5h5-ja-E6b"/>
+                            <constraint firstItem="PFx-lC-V6h" firstAttribute="leading" secondItem="KsN-pb-klU" secondAttribute="leading" id="Fr6-bm-HFU"/>
+                            <constraint firstAttribute="bottom" secondItem="xxu-bz-hgK" secondAttribute="bottom" constant="8.5" id="Gph-Yr-coJ"/>
+                            <constraint firstItem="KsN-pb-klU" firstAttribute="leading" secondItem="KQ2-it-gTF" secondAttribute="trailing" constant="8" id="HMi-Cn-i2Z"/>
+                            <constraint firstItem="xxu-bz-hgK" firstAttribute="trailing" secondItem="PFx-lC-V6h" secondAttribute="trailing" id="ITp-EM-VP3"/>
+                            <constraint firstItem="NE4-vw-W8r" firstAttribute="leading" secondItem="KsN-pb-klU" secondAttribute="leading" id="Iid-cQ-xRB"/>
+                            <constraint firstItem="TfD-4M-HYh" firstAttribute="centerY" secondItem="KsN-pb-klU" secondAttribute="centerY" id="Kon-HK-2x6"/>
+                            <constraint firstItem="PFx-lC-V6h" firstAttribute="top" secondItem="NE4-vw-W8r" secondAttribute="bottom" constant="5" id="L1u-8F-wDe"/>
+                            <constraint firstItem="xxu-bz-hgK" firstAttribute="width" secondItem="PFx-lC-V6h" secondAttribute="width" id="OsF-D8-C1y"/>
+                            <constraint firstItem="m4C-aP-od4" firstAttribute="leading" secondItem="NE4-vw-W8r" secondAttribute="trailing" constant="12" id="X8e-Hs-R3g"/>
+                            <constraint firstAttribute="trailing" secondItem="PFx-lC-V6h" secondAttribute="trailing" constant="20" id="XM5-cy-Pcx"/>
+                            <constraint firstAttribute="trailing" secondItem="PCX-Np-iR7" secondAttribute="trailing" id="ahQ-ey-yeE"/>
+                            <constraint firstItem="KsN-pb-klU" firstAttribute="top" secondItem="Xha-6a-SSN" secondAttribute="top" constant="8" id="cog-09-qx3"/>
+                            <constraint firstItem="m4C-aP-od4" firstAttribute="centerY" secondItem="NE4-vw-W8r" secondAttribute="centerY" id="enh-lP-8ce"/>
+                            <constraint firstItem="TfD-4M-HYh" firstAttribute="leading" secondItem="KsN-pb-klU" secondAttribute="trailing" constant="15" id="hx1-9d-zvY"/>
+                            <constraint firstItem="NE4-vw-W8r" firstAttribute="top" secondItem="KsN-pb-klU" secondAttribute="bottom" constant="5" id="jWm-Il-zti"/>
+                            <constraint firstItem="xxu-bz-hgK" firstAttribute="top" secondItem="PFx-lC-V6h" secondAttribute="bottom" constant="8" id="sdp-eV-Eqy"/>
+                            <constraint firstItem="KQ2-it-gTF" firstAttribute="top" secondItem="Xha-6a-SSN" secondAttribute="top" constant="8" id="stx-3R-wim"/>
+                            <constraint firstItem="PCX-Np-iR7" firstAttribute="top" secondItem="Xha-6a-SSN" secondAttribute="top" id="vW5-HL-ZM3"/>
+                            <constraint firstItem="KQ2-it-gTF" firstAttribute="leading" secondItem="Xha-6a-SSN" secondAttribute="leading" constant="8" id="wU4-76-hwQ"/>
+                            <constraint firstAttribute="trailing" secondItem="m4C-aP-od4" secondAttribute="trailing" constant="16" id="zda-GS-PQF"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="Xha-6a-SSN" secondAttribute="trailing" constant="16" id="Ck9-N4-oIl"/>
+                    <constraint firstItem="Xha-6a-SSN" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="Jj5-dU-yx4"/>
+                    <constraint firstAttribute="bottom" secondItem="Xha-6a-SSN" secondAttribute="bottom" constant="10" id="UIm-d6-aob"/>
+                    <constraint firstItem="Xha-6a-SSN" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="e4g-Dr-Prd"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="arrowView" destination="PCX-Np-iR7" id="XYh-B9-yQS"/>
+                <outlet property="imgAvatar" destination="KQ2-it-gTF" id="afe-Es-GiO"/>
+                <outlet property="lblDescription" destination="PFx-lC-V6h" id="UDE-hF-QuG"/>
+                <outlet property="lblName" destination="KsN-pb-klU" id="zx5-VP-Mx3"/>
+                <outlet property="lblSymptoms" destination="NE4-vw-W8r" id="4cN-2Q-Lyg"/>
+                <outlet property="lblTitle" destination="TfD-4M-HYh" id="EmC-Y5-nuJ"/>
+                <outlet property="lblVitalSign" destination="xxu-bz-hgK" id="9S5-ss-00d"/>
+                <outlet property="mainView" destination="Xha-6a-SSN" id="yoW-lC-OUS"/>
+            </connections>
+            <point key="canvasLocation" x="254.34782608695653" y="63.950892857142854"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="4" width="78" height="78"/>
+        <image name="Arrow" width="30" height="21"/>
+        <namedColor name="Color_LightBlue">
+            <color red="0.10599999874830246" green="0.3449999988079071" blue="0.79600000381469727" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

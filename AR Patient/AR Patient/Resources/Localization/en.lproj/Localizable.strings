@@ -1,0 +1,688 @@
+/*
+ Localizable.strings
+ 
+ Created by Self on 12/4/17.
+ Copyright © 2017   All rights reserved.
+ */
+
+// GENERAL MESSAGES
+"Norecords"                          = "No data found!";
+"ERROR_CALL"                         = "Unable to reach to the server, Please check your internet connection and retry"; //"Looks like the server is taking to long to respond, this can be caused by either poor connectivity or an error with our servers. Please try again in a while";
+"SearchPlaceholder"                  = "Search...";
+
+"error_invalid_url"                  = "Invalid URL or site is down"; //404
+"error_timeout"                      = "Connection timeout, please check internet connectivity."; //408
+"error_server_not_responding"        = "Server is not responding, please try after sometime."; //503
+"error_file_not_found"               = "Unable to locate file.";
+"error_unknown"                      = "Unknown error, please try after sometime.";
+
+
+/*                      AR Patients SCREEN                 */
+"KeylblSearchBar"                    = "Search by name";
+"KeylblARListTitlte"                 = "AR Patients";
+
+/*                      HEADER TITLE OF AR_PATIENTS                 */
+"KeylblExamHelp"                    = "Exam Help";
+"KeylblTestResults"                 = "Test Results";
+"KeylblLeaderboard"                 = "Leaderboard";
+"KeylblProfile"                     = "My Profile";
+
+
+/*                      WELCOME SCREEN                 */
+"KeylblShowOff"                      = "THE SHOW OFF APP";
+"KeybtnAleadyAcc"                    = "Already Have An Account?";
+"KeybtnCreateAccount"                = "SIGN UP";
+"KeyAlertComingSoon"                 = "Coming Soon";
+
+
+/*                      CONTACT US SCREEN                 */
+"KeylblLSTitle"                      = "Title";
+"KeyTitleValidation"                 = "Please enter title.";
+"KeyMessageValidation"               = "Please enter Message.";
+"KeylblMessage"                      = "Message";
+"KeySuccessSubmit"                   = "Thank you for contacting us. We will connect with you soon for your raised concern.";
+
+/*                      Support SCREEN                 */
+"KeySupportTitle"                    = "NEED SOME HELP ?";
+
+
+
+/*                      BLOGS SCREEN                 */
+"KeyBlogTitle"                       = "BLOG";
+
+/*                      LOGIN SCREEN                 */
+"KeybtnLogin"                        = "SIGN  IN";
+"KeylblLSEmail"                      = "Email";
+"keylblPassword"                     = "Password";
+"KeybtnForgot"                       = "Forgot Password";
+"KeybtnSkip"                         = "Skip for Now";
+"KeybtnRegistration"                 = "New User? Sign up";
+"KeybtnRegister"                     = "Need an Account?";
+"KeylblOrSignIn"                     = "Or Sign In with";
+
+"KeyEmailUserValidation"             = "Please enter email.";
+"KeyValidEmailValidation"            = "Please enter valid email address.";
+"keyPasswordValidation"              = "Please enter password.";
+"KeyPassCharacterValidation"         = "Password should have minimum 8 characters.";
+
+"KeyUserRoleValidation"              = "Please select your role.";
+
+
+
+/*                      SLIDE MENU SCREEN                 */
+"KeybtnHome"                        = "Dashboard";
+"KeybtnTripHistory"                 = "Trip History";
+"KeybtnChat"                        = "Chat";
+"KeybtnMyProfile"                   = "Edit Profile";
+"KeybtnMessages"                    = "Messages";
+"KeybtnNotifications"               = "Notifications";
+"KeybtnBlogs"                       = "Blog";
+"KeybtnAboutUs"                     = "About Us";
+"KeybtnTerms&Conditions"            = "Terms & Conditions";
+"KeybtnChangePassword"              = "Change Password";
+"KeybtnDeleteAccount"               = "Delete Account";
+"KeybtnSupport"                     = "Contact Us";
+"KeybtnPrivacyPolicy"               = "Privacy Policy";
+"KeybtnLogout"                      = "Logout";
+
+
+
+/*                      CREATE TRIP SCREEN                 */
+"KeylblCreateTripTitle"             = "CREATE TRIP";
+"KeylblPickUp"                      = "Your Location";
+"KeylblDropOff"                     = "Shipping/Receiving Gate Address";
+"KeybtnCreate"                      = "CREATE";
+
+
+
+
+/*                      LOCATION SCREEN                 */
+"KeylblLocationTitlePickUp"       = "YOUR LOCATION";
+"KeylblLocationTitleDropOff"      = "SHIPPING/RECEIVING GATE";
+"KeybtnSetAddress"                = "SET ADDRESS";
+
+
+/*                      RESET PASSWORD SCREEN */
+"KeylblResetPassword"               = "RESET PASSWORD";
+"KeylblEnterOtp"                    = "Enter OTP";
+"KeybtnDone"                        = "Done";
+"keyOTPValidation"                  = "Please enter OTP.";
+"KeylblCheckEmail"                  = "Please check your email box for Onetime Password (OTP) which requires to reset your password.";
+"KeyChangePasswordSuccessMessage"   = "Your password has been changed successfully.";
+
+
+/*                      REGISTER SCREEN                */
+"KeylblRegistration"                 = "Don't have an account? Register Now";
+"KeylblFullName"                    = "Full Name";
+"KeylblLastName"                     = "Last Name";
+"KeylblNickName"                     = "Handle/Nickname";
+"KeylblEmail"                        = "Email";
+"KeylblBusiness"                     = "Driver Type";
+"KeylblPhone"                        = "Phone";
+"KeylblUserName"                     = "Name";
+"KeylblPassword"                     = "Password";
+"KeylblConfirmPassword"              = "Confirm Password";
+"KeylblAddress1"                     = "Address Line1";
+"KeylblAddress2"                     = "Address Line2 (Optional)";
+"KeylblCity"                         = "City";
+"KeylblState"                        = "Select State";
+"KeylblCountry"                      = "Country";
+"KeylblZipcode"                      = "Zipcode";
+"KeylblReferralCode"                 = "Referral Code (Optional)";
+"KeybtnSignUp"                       = "REGISTER";
+"KeylblDoYouLogin"                   = "Do you have an account? Login";
+"KeybtnLeadAgent"                    = "LEAD AGENT";
+"KeybtnShowingAgent"                 = "SHOWING AGENT";
+
+"KeybtnContinue"                     = "Continue";
+"KeybtnSaveProceed"                  = "SAVE AND PROCEED";
+"KeybtnCancel"                       = "Cancel";
+
+"KeylblDocInfo"                      = "Document Information";
+
+"KeyProfileImageValidation"          = "Please select profile image.";
+"KeyFirstNameValidation"             = "Please enter first name.";
+"KeyFullNameValidation"             = "Please enter your name.";
+"KeyLastNameValidation"              = "Please enter last name.";
+"KeyNickNameValidation"              = "Please enter handle/nickname.";
+"KeyDriverTypeValidation"            = "Please select driver type.";
+"KeyUserNameValidation"              = "Please enter name.";
+"KeyPhoneValidation"                 = "Please enter phone.";
+"KeyValidPhoneValidation"            = "Please enter valid phone.";
+"keyConfirmPasswordValidation"       = "Please enter confirm password.";
+"keyPasswordMatchValidation"         = "Password and Confirm Password should be same.";
+"KeyAddressLine1Validation"          = "Please enter address line1.";
+"KeyAddressLine2Validation"          = "Please enter address line2.";
+"KeyCityValidation"                  = "Please enter your city.";
+"KeyStateValidation"                 = "Please select your state.";
+"KeyZipcodeValidation"               = "Please enter zipcode.";
+"KeyValidBirthDateValidation"        = "You must be at-least 19 years old in order to use TRUCKET services.";
+
+"KeyTermsValidation"                 = "Please agree for Terms & Conditions.";
+"KeyProfilePicValidation"            = "Please upload your profile picture.";
+"KeyVehiclePicValidation"            = "Please upload your vehicle picture.";
+"KeyIAcceptTerms"                    = "I accept Terms & Conditions";
+"keylblSelectBusiness"               = "Business";
+"keylblAvatarLicense"                = "License Number";
+"KeyLicenseNoValidation"             = "Please enter license number.";
+"KeyAvatarValidation"                = "Please choose your avatar.";
+"KeylblAcceptTC"                     = "On signing up with AR Patient,\nI agree to Terms & Condition";
+
+/*                      BROKERAGE ADDRESS SCREEN                */
+"KeylblBrokerageHeader1"           = "Please List Your Brokerage Address";
+"KeylblAddress"                    = "Address";
+"KeylblStreet1"                    = "Street 1";
+"KeylblStreet2"                    = "Street 2";
+"KeylblCity"                       = "City";
+"KeylblState"                      = "State";
+"KeylblZipcode"                    = "Zipcode";
+"KeylblBrokerageHeader2"           = "If a Showing Agent needs to reach out during a showing what is the best email and phone number";
+"KeylblBrokerageHeader22"          = "How many miles are you willing to travel to a showing.";
+"KeylblPhone"                      = "Phone";
+"KeylblEmail"                      = "Email";
+"KeyMilage"                        = "Miles";
+"keyPhoneValidation"               = "Please enter phone number.";
+"keyPhoneValidValidation"          = "Please enter valid phone number.";
+"keyAddressValidation"             = "Please enter address.";
+"KeyMilesValiadtion"               = "Please enter miles.";
+"keyLocationValidation"            = "Please choose location.";
+"keybtnChooseLocation"             = "Choose Location";
+"keybtnChoose"                     = "SET ADDRESS";
+
+/*                      About & Experience SCREEN                */
+"KeylblExpHeader"                  = "Show Us Your Realtor Smile!";
+"KeylblAbout"                      = "About";
+"KeylblAboutMe"                    = "About Me";
+"KeylblValues"                     = "Values";
+"KeylblRealEstateBG"               = "Background & Experience";
+"KeytvTypeHere"                    = "Type Here";
+"KeylblKnowledgeOfArea"            = "Knowledge Of The Area";
+"keyRealEstateBGValidation"        = "Please enter real estate background & experience.";
+"keyAboutValidation"               = "Please enter about.";
+"keyAboutValidationMe"             = "Please enter about me.";
+"keyValuesValidation"              = "Please enter values.";
+"keyKnowledgeValidation"           = "Please enter knowledge of the area.";
+"keyImageValidation"               = "Please choose image.";
+"keylblIntroduction"               = "INTRODUCTION";
+
+/*                      Licenses SCREEN                */
+"KeylblLicenseNo"                  = "What is your Realtor License Number?";
+"KeytxtLicenseNo"                  = "ID : 012 345 123";
+"KeylblExpirationDate"             = "Expiration date?";
+"KeytxtExpirationDate"             = "31 Sep 2025";
+"keyLicenseImageValidation"        = "Please choose license image.";
+"KeylblIsActiveLic"                = "Is your License Active?";
+"KeylblBrokeragePhoneNo"           = "Brokerage Phone Number";
+"KeylblBrokerageName"              = "Brokerage Name";
+"KeylblBrokerageAddress"           = "Brokerage Address";
+"KeylblYes"                        = "Yes";
+"KeylblNo"                         = "No";
+"keyExpirationValidation"          = "Please enter expiration date.";
+"keyLicenseExpirationValidation"   = "Please enter license expiration date.";
+"keyLicenseIDSAValidation"         = "Please enter your license number.";
+"keyLicenseIDValidation"           = "Please enter your realtor license number.";
+"keyBrokerageNameValidation"       = "Please enter brokerage name.";
+"keylblRealLicense"                = "REALTOR LICENSE";
+
+/*                      Career SCREEN                */
+"KeylblSoldCount"                  = "How Many Homes Have You Sold In Your Career?";
+"KeylblSoldCount12"                = "How Many Homes Have You Sold In The Last 12 Months?";
+"KeylblStatesOperate"              = "What states are you licensed to Operate In?";
+"KeylblSelectStates"               = "Select States";
+"keySoldValidation"                = "Please enter sold counts.";
+"keySold12Validation"              = "Please enter sold counts of last 12 months.";
+"keyLicOperateValidation"          = "Please select atleast one state.";
+"keylblSelectState"                = "SELECT STATE";
+
+/*                      Card SCREEN                */
+"KeylblCardNumber"                 = "Card Number";
+"KeylblExpirationCard"             = "Expiration";
+"KeylblCVV"                        = "CVV";
+"KeybtnFinish"                     = "FINISH";
+"keylblCardDetails"                = "CARD DETAILS";
+"KeylblCardNumberValidation"       = "Please enter valid card number.";
+"KeylblCardExpDateValidation"      = "Please enter valid card expiry date.";
+"KeylblCardCVVValidation"          = "Please enter valid card CVV.";
+
+/*                      Congratulations SCREEN                */
+"KeylblThankYou"                   = "THANKS FOR REGISTERING";
+"KeylblThankDescription"           = "Welcome, you are now a member of TRUCK ME IN team and allowed access to serve your business as TRUCKER.";
+"KeybtnLetsGo"                     = "LET'S GO";
+
+/*                      LISTING SCREEN - LEAD AGENT                */
+"KeylblListingAgentHeader"         = "LEAD AGENT";
+"KeylblListingAgentHeader"         = "LEAD AGENT";
+"KeybtnScheduleShowing"            = "Schedule A Showing";
+"KeylblActiveShowing"              = "ACTIVE SHOWINGS";
+"KeylblAwaitingShowing"            = "AWAITING A SHOWING AGENT";
+"KeylblUpcomingShowing"            = "UPCOMING SHOWINGS";
+"KeylblDay"                        = "DAY";
+"KeylblIntereseted"                = "INTERESTED";
+"KeylblNA"                         = "NA";
+"KeylblOffers"                     = "OFFERS";
+"KeylblAvailability"               = "Availability";
+"KeybtnBegin"                      = "BEGIN";
+"KeybtnResume"                     = "RESUME";
+
+/*                      CREATE SHOWING SCREEN                */
+"KeylblCreateShowing"              = "CREATE A SHOWING";
+"KeylblClientName"                 = "Client Name";
+"KeylblClientPhoneCall"            = "Primary Phone";
+"KeylblPrimaryPhone"               = "Secondary Phone";
+"KeylblDayOfShowing"               = "Day Of Showing";
+"KeylblTimeOfShowing"              = "Time of First Showing";
+"KeylblPutInYourShwoings"          = "PUT IN YOUR SHOWINGS FOR THIS CLIENT:";
+"keyClientNameValidation"          = "Please enter client name.";
+"keyClientPhoneValidation"         = "Please enter primary phone call.";
+"keyPrimaryPhoneValidation"        = "Please enter secondary phone.";
+"keyDayShowingValidation"          = "Please enter day of showing.";
+"keyTimeShowingValidation"         = "Please enter time of first showing.";
+"keyAddressSelectValidation"       = "Please add address.";
+"keyPaymentMethodValidation"       = "Please add payment method.";
+"keybtnPaymentMethod"              = "Add Payment Method";
+
+/*                      PAYMENT OPTION SCREEN                */
+"KeylblPaymentMethod"              = "Payment Method";
+"KeybtnAddCard"                    = "ADD CARD";
+"KeylblSelectCard"                 = "SELECT CARD TO PAY";
+
+/*                      CREATE SHOWING SUCCESS SCREEN                */
+"KeylblHeaderCreateShowingConf"    = "CONFIRM";
+"KeylblEstCharge"                  = "ESTIMATED CHARGE";
+"KeylblInvitationSent1"            = "INVITATION IS SENT TO";
+"KeylblInvitationSent2"            = "SHOWING AGENTS";
+
+/*                      OFFER SCREEN                */
+"KeybtnCall"                       = "CALL";
+"KeybtnCancelJob"                  = "CANCEL JOB";
+"KeylblOffers"                     = "OFFERS";
+"KeybtnAccept"                     = "ACCEPT";
+"KeybtnRemove"                     = "REMOVE";
+"KeylblSoldInLast12M"              = " Home Sold in last 12 months";
+"KeybtnCallAgent"                  = "CALL AGENT";
+"KeybtnEndjob"                     = "END JOB";
+"KeybtnAward"                      = "AWARD";
+"KeylblNotesFromLA"                = "Notes from Lead Agent";
+
+/*                      UPLOAD PHOTO SCREEN              */
+"KeylblUploadPhotoTitle"             = "Photo";
+"KeylblUploadPhotoTitle1"            = "Upload Your Photo";
+"KeylblUploadPhotoDesc1"             = "Just click on the camera button,";
+"KeylblUploadPhotoDesc2"             = "Choose your photo from gallery and upload it";
+
+/*                      VEHICLE INFORMATION SCREEN              */
+"KeylblVehicleTitle"                 = "Vehicle Details";
+"KeylblVehicleTitle1"                = "Fill Vehicle Details";
+"KeylblVehicleDesc1"                 = "Fill the all correct vehicle details";
+"KeylblVehicleDesc2"                 = "Below the form";
+
+"KeylblCarMake"                      = "Car Make";
+"KeylblCarModel"                     = "Car Model";
+"KeylblCarColor"                     = "Car Color";
+"KeylblCarRegNumber"                 = "Registration Number";
+"KeylblCarVinNumber"                 = "Vin";
+
+"KeylblBasePrice"                    = "Base Fare";
+"KeylblChargePerMile"                = "Per Mile Charge";
+"KeylblChargePerMin"                 = "Per Minute Charge";
+"KeylblCancellationCharge"           = "Cancellation Charge";
+
+"KeyCarMakeValidation"               = "Please enter car manufacturer name.";
+"KeyCarModelValidation"              = "Please enter car model.";
+"KeyCarColorValidation"              = "Please enter car color.";
+"KeyCarRegNumberValidation"          = "Please enter your registration number.";
+"KeyCarVinNumberValidation"          = "Please enter your vin number.";
+"KeyCarValidVinNumberValidation"     = "Please enter valid vin number.";
+"KeyVehicleClassValidation"          = "Please select your vehicle class.";
+
+"KeyBasePriceValidation"             = "Please enter your base fare.";
+"KeyChargePerMileValidation"         = "Please enter your per mile charge.";
+"KeyChargePerMinValidation"          = "Please enter your per minute charge.";
+"KeyCancellationChargeValidation"    = "Please enter your cancellation charge.";
+
+"KeyDocImageValidation"              = "Please select ";
+
+"KeylblUploadVehiclePhotoTitle"      = "Vehicle Photo";
+"KeylblUploadVehiclePhotoTitle1"     = "Upload Vehicle Photo";
+"KeylblUploadVehiclePhotoDesc1"      = "Just click on the camera button,";
+"KeylblUploadVehiclePhotoDesc2"      = "Choose vehicle photo and upload it";
+
+"KeylblDocumentInfo"                 = "Document Information";
+"KeyDocImageValidation"              = "Please select ";
+//"KeybtnRegister"                     = "Register";
+
+//
+"KeyProfileImageValidationMessage"         = "For profile Minimum image dimension must be 300 X 300.";
+
+/*                  CONGRATULATION SCREEN              */
+"KeyCSTitle"                          = "Congratulations";
+"KeyCSSubTitle"                       = "We received your request for becoming an FoodPon user.Please check your email for confirmation of your application.";
+"KeyCSbtnGo"                          = "Let's Go";
+
+
+
+/*                      FORGOT PASSWORD SCREEN || CHANGE PASSWORD SCREEN              */
+"KeylblForgot"                      = "Forgot Password";
+"KeylblForgotInstruction"           = "Don't worry! Just enter your email ID below and we'll send you the password reset instruction.";
+"KeybtnResetPassword"               = "SUBMIT";
+
+"KeyEmailValidation"                = "Please enter email.";
+
+
+"KeylblChangePassword"              = "Change Password";
+"KeylblCurrentPassword"             = "Current Password";
+"KeylblNewPassword"                 = "New Password";
+"KeylblConfirmNewPassword"          = "Confirm New Password";
+"keyCurrentPasswordValidation"      = "Please enter current password.";
+"keyNewPasswordValidation"          = "Please enter new password.";
+//"keyConfirmPasswordValidation"      = "Please enter confirm password.";
+"KeyNewPassvalidation"              = "New password should have minimum 8 characters.";
+"KeyConfirmPassvalidation"          = "Confirm password should have minimum 8 characters.";
+"keySamePasswordValidation"         = "New password and confirm password should be same.";
+
+/*                      CONGRATULATION SCREEN                   */
+
+"KeylblCongratulations"             = "Congratulations!";
+"KeytxtCongratulationsDriver"       = "Received your request for being TRUCKET driver. You will receive a confirmation email. Please login to your account.";
+"KeytxtCongratulationsTailgater"    = "Received your request for being TRUCKET tailgater. You will receive a confirmation email. Please login to your account.";
+//"KeybtnLetsGo"                      = "Let's Begin!";
+
+
+
+"KeylblLocation"                    = "LOCATION";
+"KeyReadyToPick"                    = "READY TO PICK ";
+"KeylblPickup"                      = "PICKUP ";
+"KeylblDropoff"                     = "DROP OFF ";
+
+
+/*                      EDIT PROFILE SCREEN                */
+"KeylblEditProfile"                = "Edit Profile";
+"KeylblBasicInfo"                  = "Basic Information";
+"KeylblVehicleInfo"                = "Vehicle Information";
+"KeylblDocInfo"                    = "Document Information";
+"KeylblChangePass"                 = "Change Password";
+"KeylblBackCheckInfo"              = "Background Information";
+"KeybtnUpdate"                    = "Update";
+
+"KeyFPSuccessMessage"                = "Your password reset link has been sent successfully to your Email address.";
+"KeyCPSuccessMessage"                = "Your password has been changed successfully.";
+"KeyBasicInfoSuccessMessage"         = "Your basic information has been updated successfully.";
+"KeyVehicleInfoSuccessMessage"       = "Your vehicle information has been updated successfully.";
+"KeyPersonalInformation"             = "Personal Information";
+
+"KeyDocExpiredMessage"               = "It seems your one of document is expired, please go to profile section and change it.";
+"KeySubscriptionMessage"             = "One more step is left, please subscribe to use TRUCKET services.";
+"KeyBackCheckPendingMessage"         = "Please allow us sometime to verify your request. We will inform you once your profile is approved.";
+"KeyBackCheckRejectedMessage"        = "Your profile is rejected please contact support for more detail.";
+
+/*                      BACKGROUND CHECK SCREEN                */
+"KeylblBackTitle"                   = "Background Check";
+"KeylblBackPersonalInfo"            = "Personal Information";
+"KeylblBackSSNNumber"               = "SSN#";
+"KeylblBackSSNNumberValidation"     = "Please enter SSN#.";
+"KeylblValidSSNNumberValidation"    = "Please enter valid SSN#.";
+"KeylblBackBirthDate"               = "Birth Date";
+"KeylblBackBirthDateValidation"     = "Please select your birth date.";
+"KeylblBackPhone"                   = "Phone";
+"KeylblBackPhoneValidation"         = "Please enter your phone number.";
+
+"KeylblBackLicenseInfo"             = "License Information";
+"KeylblBackLicenseNumber"           = "License#";
+"KeylblBackLicenseNumberValidation" = "Please enter license#.";
+"KeylblBackIssueAuthority"          = "Issuing Authority";
+"KeylblBackIssueAuthorityValidation"= "Please enter your issuing authority.";
+"KeylblBackCity"                    = "Licensing City";
+"KeylblBackCityValidation"          = "Please enter your licensing city.";
+"KeylblBackState"                   = "Licensing State";
+"KeylblBackStateValidation"         = "Please select licensing state.";
+"KeybtnBackSubmit"                  = "Submit";
+
+"KeylblBirthdayValidation"          = "Birth date should not be future date.";
+
+/*                      PROFILE SCREEN                */
+"KeylblName"                        = "NAME";
+"KeylblEmailId"                     = "EMAIL ID";
+"KeylblPhoneNo"                     = "PHONE NO.";
+"KeylblPaymentMethod"               = "PAYMENT METHOD";
+
+
+"KeyProfileUpdateSuccessMessage"    = "Your profile has been updated successfully.";
+"KeyCarInfoUpdateSuccessMessage"    = "Your car information has been updated successfully.";
+
+"KeylblTicketNumber"                = "TICKET NUMBER";
+"KeylblDistance"                    = "DISTANCE";
+"KeylblFare"                        = "TOTAL FARE";
+"KeylblTime"                        = "TIME";
+"KeylblPickups"                     = "PICKUP";
+"KeylblDestination"                 = "DESTINATION";
+"KeylblCancellationChargeCaps"      = "CANCELLATION CHARGE";
+
+"KeylblVehicleClass"                = "Select Vehicle Class";
+"KeylblDriverCharges"               = "Charges";
+
+"KeylblPickupTime"                  = "PICKUP TIME";
+"KeylblDropOffTime"                 = "DROP OFF TIME";
+"KeylblStatus"                      = "STATUS";
+
+
+"KeybtnRateIt"                      = "Rate It";
+"KeylblSuccess"                     = "SUCCESS";
+"KeylblCancel"                      = "CANCELLED";
+"KeylblRequested"                   = "REQUESTED";
+"KeylblAccepted"                    = "ACCEPTED";
+"KeylblAtPickup"                    = "AT PICKUP";
+"KeylblPickupCap"                   = "PICKUP";
+"KeylblDropoffCap"                  = "DROPOFF";
+
+"KeylblCustomerNameCaption"         = "CUSTOMER NAME";
+
+//////////////////////////////////////////////////////////////////
+
+"KeyFbtnSkip"                        = "SKIP";
+"KeyVbtnResetPassword"               = "RESET PASSWORD";
+"KeyVbtnChangePassword"              = "CHANGE PASSWORD";
+
+
+"KeyRbtnNext"                        = "NEXT";
+
+"KeyRbtnTakePhoto"                   = "TAKE PHOTO";
+
+"KeyRlblCarInfo"                     = "Car Information";
+"KeyRLCarType"                       = "CAR TYPE";
+"KeyRLCarTypeValidation"             = "Please select car type.";
+"KeyRLCarModel"                      = "CAR MODEL";
+"KeyRLCarModelValidation"            = "Please enter car model.";
+"KeyRLCarColor"                      = "CAR COLOR";
+"KeyRLCarColorValidation"            = "Please enter car color.";
+"KeyRLCarRegistration"               = "REGISTRATION NUMBER";
+
+
+
+"KeyRLLicenseImageValidation"        = "Please select license image.";
+"KeyRlblLicenseInfo"                 = "License Information";
+"KeyRLLicenseNumber"                 = "LICENSE NUMBER";
+"KeyRLLicenseNumberValidation"       = "Please enter license number.";
+"KeyRLLicenseIssueDate"              = "ISSUED ON";
+"KeyRLLicenseIssueDateValidation"    = "Please select license issued on date.";
+"KeyRLLicIssValidDateValidation"     = "Please select license issued on date before today date.";
+"KeyRLLicenseExpireDate"             = "EXPIRY ON";
+"KeyRLLicenseExpireDateValidation"   = "Please select license expiry on date.";
+"KeyRLLicExpiValidDateValidation"    = "Please select license expiry on date grater than issued on date.";
+"KeyRLLicExpiSameDateValidation"     = "Issued on date and Expiry on date should not be same.";
+
+"KeyRLInsuranceImageValidation"      = "Please select insurance image.";
+"KeyRlblInsuranceInfo"               = "Insurance Information";
+"KeyRLInsuranceNumber"               = "INSURANCE NUMBER";
+"KeyRLInsuranceNumberValidation"     = "Please enter insurance number.";
+
+
+"KeylblTerms"                       = "Terms & Conditions";
+
+
+/*                      LOGOUT ALERT                */
+"KeylblLogoutMessage"               = "Are you sure want to logout?";
+"KeylblNoLogoutWhenTrip"            = "Please complete an ongoing trip.";
+"KeylblNoLogoutWhenOnline"          = "Please change your status to offline prior to logout.";
+
+/*                      CONFIRM RIDE SCREEN                */
+"KeyClblConfirmRide"                = "Confirm Ride";
+"KeyCbtnAccept"                     = "TAP WHEN DEPARTS";
+"KeyCbtnDecline"                    = "DECLINE";
+"KeyCbtnStartTrip"                  = "Start Trip";
+"KeyCbtnArrived"                    = "Arrived at Pickup";
+"KeyCbtnPickup"                     = "Pickup";
+"KeyCbtnDropOff"                    = "Tap to Dropoff";
+"KeyCbtnAddInvoice"                 = "Invoices";
+"KeyCbtnCompleted"                  = "Completed";
+"KeyCbtnCallSafeRide"               = "CALL FLASH RIDE";
+
+"KeyCbtnArrivedAtDrop"              = "ARRIVED AT DROPOFF";
+
+"KeyLlblStripeMessage"              = "Please fill your payment details.";
+
+"KeyRideFailMessage"                = "Sorry, You are too late. Ride request is already accepted by some other driver.";
+
+"KeyLocationEnableMessage"          = "To continue,turn on device location,which uses Google\'s location service";
+
+"KeyCallValidation"                 = "This device is not support call feature.";
+"KeySMSValidation"                  = "This device is not support sms feature.";
+
+"KeyCancellationReason"             = "Please enter cancellation reason.";
+
+"KeylblRideScheduleSuccessMessage"  = "Your ride has been scheduled successfully.";
+"KeylblNoContactValidation"         = "Sorry, contact detail is not available.";
+
+"KeylblRideCancelSuccessMessage"    = "Your ride request has been cancelled successfully.";
+
+
+"KeylblDriverStatus1"               = "On the way";
+"KeylblDriverStatus2"               = "Arrived at Pickup";
+"KeylblDriverStatus3"               = "Trip Started";
+"KeylblDriverStatus4"               = "Reach at Dropoff";
+
+"KeylbltailgaterStatus3"            = "Arrived at Dropoff";
+
+"KeylblDriver"                      = "Driver";
+"KeylblTailgaters"                  = "Tailgaters";
+
+/*                      WALLET SCREEN                */
+"KeylblWalletTitle"                 = "Wallet";
+"KeylblWalletBalance"               = "Your balance";
+"KeybtnTransferAmount"              = "Transfer Amount";
+"KeylblAmountValidation"            = "Please enter amount.";
+
+"KeylblWalletTransactions"          = "Wallet Transactions";
+
+
+//"Please enable location permission fro this application from settings.";
+
+"KeylblRideCancelMessage"           = "This ride has been cancelled.";
+
+"KeylblRatingValidation"            = "Please select star for rating!";
+"KeylblCommentValidation"           = "Please give your valuable comment.";
+
+"KeylblCancelRideValidation"        = "Please select ride cancellation reason.";
+"KeylblCancelRideMoreInfoValidation"= "Please enter more information for ride cancellation.";
+
+"KeyVlblReadyToRide"                = "Ready To Ride?";
+
+/*                      INVOICES SCREEN                */
+"KeyIlblInvoice"                    = "Invoice";
+"KeyIbtnAddInvoice"                 = "ADD INVOICE";
+
+"KeyIlblIncidentalCharges"          = "Incidental Charges";
+
+"KeyIlblInvoiceDelete"              = "Delete";
+
+"KeyRbtnTakePhotoOptional"          = "TAKE A PHOTO(Optional)";
+"KeyIlblInvoiceAdd"                 = "Add Invoice";
+"KeyIlblInvoicePurpose"             = "Invoice Purpose";
+"KeyIlblInvoicePurposeError"        = "Please enter invoice purpose.";
+"KeyIlblInvoiceAmount"              = "Invoice Amount";
+"KeyIbtnSaveInvoice"                = "SAVE";
+
+/*                      ESTIMATED FARE INFO SCREEN                */
+"KeyFlblEstFareInfo"                = "Estimated Fare Information";
+"KeyFlblEstFinalFare"               = "Final Fare";
+"KeyFlblEstTax"                     = "Tax";
+"KeyFlblEstAddCharges"              = "Additional Charges";
+"KeyFlblEstTotal"                   = "Total Charges";
+
+
+/*                      RETURN RIDE SCREEN                */
+"KeyCbtnEstFare"                    = "Est 00.00 USD";
+"KeyCbtnConfirmRide"                = "CONFIRM RIDE";
+"KeyClblWaitingDriver"              = "Waiting for driver...";
+
+"KeyClblApprovedRide"               = "Approved Ride";
+
+"KeylblArrivalTime"                 = "ATA : ";
+
+"KeyHnotGetRideAlert"               = "You are OFFLINE, so will not get ride invitation.";
+"KeyHGetRideAlert"                  = "You are ONLINE, so will get ride invitation.";
+
+"KeyClblRideCancelMessage"          = "It seems all other drivers are busy or not available.";
+
+"KeylblRideCompleteMessage"         = "You have reached at your location.";
+
+/*                      MY RIDE SCREEN                */
+"KeyMlblRideHistory"                = "Ride History";
+"KeyMlblRideDetail"                 = "View Ride";
+"KeyMlblRideDistance"               = "Total Distance";
+"KeyMlblRideTime"                   = "Total Time";
+
+"KeyClblRequesting"                 = "Requesting...";
+
+
+//Change Password
+"keySUChangePasswordsrcNew"         = "Please enter new password.";
+"keySUChangePasswordsrcNewVV"       = "New password should have min 6 characters with atleast 1 upper case, 1 lower case, 1 special character and 1 numeric character.";
+"keySUChangePasswordsrcCon"         = "Please enter confirm password.";
+"keySUChangePasswordsrcConVV"       = "Confirm password should have min 6 characters with atleast 1 upper case, 1 lower case, 1 special character and 1 numeric character.";
+"keySUChangePasswordsrcOlD"         = "Please enter old password.";
+"keySUChangePasswordsrcOlDVV"       = "Old password should have min 6 characters with atleast 1 upper case, 1 lower case, 1 special character and 1 numeric character.";
+"keySUChangePasswordsame"           = "New password can't be same as old password.";
+"keySUChangePasswordsrcConfirm"     = "New password and confirm password should be same.";
+
+"keySUChangePasswordsrcNewVV"       = "New password should be 6 or 8 characters with contain at least 1 upper case, 1 lower case, 1 special charcter and 1 numeric.";
+
+"keySUChangePasswordsrcCon"         = "Please enter confirm password.";
+"keySUChangePasswordsrcConVV"       = "Confirm password should be 6 or 8 characters with contain at least 1 upper case, 1 lower case, 1 special charcter and 1 numeric.";
+
+"keySUChangePasswordsrcOlD"         = "Please enter old password.";
+"keySUChangePasswordsrcOlDVV"       = "Old password should be 6 or 8 characters with contain at least 1 upper case, 1 lower case, 1 special charcter and 1 numeric.";
+
+"keySUChangePasswordsrcConfirm"     = "New password and confirm new password should be same.";
+
+
+
+
+
+//InterNet Message
+"keyInternetMsg" = "Ops. something went wrong please try again.";
+"KeyMessage"  = "please enter message";
+
+//Edit Profile Screen
+"KeyEPRTitle"                    = "EDIT PROFILE";
+"KeyEPRUploadPicsLBL"               = "UPLOAD PHOTO";
+
+"KeyEPRFirstName"                    = "Full name";
+"KeyEPRUserEmail"                    = "Email Id";
+"KeyEPRUserBD"                    = "Date of Birthday";
+"KeyEPRUserPhonNo"                    = "Phone Number";
+"KeyEPRSaveChanges"                    = "SAVE CHANGES";
+
+//Add Location Screen
+"KeyALTitle"                        = "ADD LOCATION";
+"KeyALAlcohole"               = "Where do you want us to deliver the Alcohole?";
+"KeyALTextAddress"                    = "Enter Street Address";
+"KeyALOR"                    = "OR";
+"KeyALFindMyLocation"                    = "FIND MY CURRENT LOCATION";
+"keyNoCamera" = "Camera is not available.";
+"keyCASBtnOK" = "Ok";
+"keyCASNoCameraFoundTitleMsg" = "Alert";
+
+
+"keyDeviceEmailNotSupportAlert" = "Your device could not send e-mail.  Please check e-mail configuration and try again.";
+
+

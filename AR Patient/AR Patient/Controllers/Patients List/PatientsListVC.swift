@@ -2,8 +2,8 @@
 //  PatientsListVC.swift
 //  AR Patient
 //
-//  Created by Krupali on 29/04/20.
-//  Copyright © 2020 Silicon. All rights reserved.
+//  Created by Knoxweb on 29/04/20.
+//  Copyright © 2020 Knoxweb. All rights reserved.
 //
 
 import UIKit
@@ -107,6 +107,19 @@ class PatientsListVC: UIViewController {
                 if let str = Dict["code"] as? Int , str == 0{
                     self.arrData.removeAll()
                     
+                    if let arrBody_parts = Dict["body_parts"] as? NSArray {
+                        for arrBody_partsData in arrBody_parts {
+                            if let dictBody_parts = arrBody_partsData as? [String : Any]{
+                                let bodyPartsData = BodyPartsModel()
+                                
+                                bodyPartsData.id = JSON(dictBody_parts["id"]!).stringValue
+                                bodyPartsData.name = JSON(dictBody_parts["name"]!).stringValue
+                                
+                                Singleton.shared.arrAllBodyParts.append(bodyPartsData)
+                            }
+                        }
+                    }
+                    
                     if let arrPatient = Dict["types"] as? NSArray {
                         for arrPatientData in arrPatient {
                             if let dictPatient = arrPatientData as? [String : Any]{
@@ -120,6 +133,8 @@ class PatientsListVC: UIViewController {
                                 patientData.pt_name = JSON(dictPatient["pt_name"]!).stringValue
                                 patientData.physical_exam_counter = JSON(dictPatient["physical_exam_counter"]!).intValue
                                 patientData.voice_exam_counter = JSON(dictPatient["voice_exam_counter"]!).intValue
+                                patientData.image_id = JSON(dictPatient["image_id"]!).intValue
+                                patientData.user_type = JSON(dictPatient["user_type"]!).intValue
                                 var symptoms = ""
                                 if let arrSymptoms = dictPatient["symptoms"] as? NSArray {
                                     for arrPatientData in arrSymptoms {
@@ -149,6 +164,7 @@ class PatientsListVC: UIViewController {
                                             
                                             bodyPartsData.id = JSON(dictBodyParts["id"]!).stringValue
                                             bodyPartsData.name = JSON(dictBodyParts["name"]!).stringValue
+                                            bodyPartsData.body_part_id = JSON(dictBodyParts["body_part_id"]!).stringValue
                                             
                                             var arr = [String]()
                                             if let arrSymptoms = dictBodyParts["symptoms"] as? NSArray {
@@ -164,7 +180,7 @@ class PatientsListVC: UIViewController {
                                     }
                                 }
                                 
-                                if(patientData.physical_exam_counter != 0 && patientData.voice_exam_counter != 0) {
+                                if(/*patientData.physical_exam_counter != 0 && */patientData.voice_exam_counter != 0) {
                                     self.arrData.append(patientData)
                                 }
                             }
@@ -173,6 +189,31 @@ class PatientsListVC: UIViewController {
                         
                         self.tableview.reloadData()
                     }
+                    
+                    if let arrSubscriptionPlans = Dict["subscription_featured_list"] as? NSArray {
+                        if arrSubscriptionPlans.count == 0 { } else{
+                            for arrSubscriptionPlansData in arrSubscriptionPlans {
+                                if let dictSubscriptionPlansData = arrSubscriptionPlansData as? [String : Any]{
+                                    let title = JSON(dictSubscriptionPlansData["post_title"]!).stringValue
+                                    Singleton.shared.arrSubscriptionData.append(title)
+                                }
+                            }
+                        }
+                    }
+                    
+                    let exp_date = JSON(Dict["exp_date"]!).stringValue
+                    let is_subscribed = JSON(Dict["is_subscribed"]!).stringValue
+                    let subscription_bundle_id = JSON(Dict["subscription_bundle_id"]!).stringValue
+                    let subscription_platform = JSON(Dict["subscription_platform"]!).stringValue
+                    let subscription_token = JSON(Dict["subscription_token"]!).stringValue
+                    let subscription_content = JSON(Dict["subscription_content"]!).stringValue
+                    
+                    Singleton.shared.subscription_exp_date = exp_date
+                    Singleton.shared.is_subscribed = is_subscribed
+                    Singleton.shared.subscription_bundle_id = subscription_bundle_id
+                    Singleton.shared.subscription_platform = subscription_platform
+                    Singleton.shared.subscription_token = subscription_token
+                    Singleton.shared.subscription_content = subscription_content
                 }
             }
             
@@ -228,19 +269,47 @@ extension PatientsListVC: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let data = self.filterData[indexPath.row]
         
-        let cell = tableView.cellForRow(at: indexPath) as! PatientsListCell
+        let user_type = data.user_type
+        let is_subscribed = Singleton.shared.subscription_bundle_id
+        var subscription = 0
+        if(is_subscribed == "com.ar.patient.silver") {
+            subscription = 1
+        } else if(is_subscribed == "com.ar.patient.gold") {
+            subscription = 2
+        }
+        if(subscription == 2 || subscription == user_type || user_type == 0) {
+            let cell = tableView.cellForRow(at: indexPath) as! PatientsListCell
+            
+            let vc = UIStoryboard.init(name: "Development", bundle: Bundle.main).instantiateViewController(withIdentifier: "PhysicalExam3DVC") as? PhysicalExam3DVC
+            vc?.patient_id = data.patient_id
+            vc?.avatar = data.avatar
+            vc?.patient_name = data.patient_name
+            vc?.modeUrl = "\(APIConstant.mediaURL)\(data.model)"
+            vc?.vital_signs = cell.lblVitalSign.text!
+            vc?.arrBodyParts = data.arrBodyParts
+            vc?.hint_text = data.hint_text
+            vc?.pt_name = data.pt_name
+            vc?.tag = 1
+            vc?.image_id = data.image_id
+            self.navigationController?.pushViewController(vc!, animated: true)
+        } else {
+            var plan = ""
+            if(user_type == 1) {
+                plan = "silver"
+            } else {
+                plan = "gold"
+            }
+            AJAlertController.initialization().showAlert(aStrMessage: "Sorry, you can't access the patient as that patient is avalable under \(plan) plan. Please subscribe for \(plan) plan to access this patient.", aCancelBtnTitle: "Subscribe", aOtherBtnTitle: "Cancel", completion: { (index, title) in
+                if index == 0 {
+                    let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "SubscriptionVC") as? SubscriptionVC
+                    self.navigationController?.pushViewController(vc!, animated: true)
+                } else {
+                    
+                }
+            })
+        }
         
-        let vc = UIStoryboard.init(name: "Development", bundle: Bundle.main).instantiateViewController(withIdentifier: "PhysicalExam3DVC") as? PhysicalExam3DVC
-        vc?.patient_id = data.patient_id
-        vc?.avatar = data.avatar
-        vc?.patient_name = data.patient_name
-        vc?.modeUrl = "\(APIConstant.mediaURL)\(data.model)"
-        vc?.vital_signs = cell.lblVitalSign.text!
-        vc?.arrBodyParts = data.arrBodyParts
-        vc?.hint_text = data.hint_text
-        vc?.pt_name = data.pt_name
-        vc?.tag = 1
-        self.navigationController?.pushViewController(vc!, animated: true)
+        
         
         /*let vc = UIStoryboard.init(name: "Development", bundle: Bundle.main).instantiateViewController(withIdentifier: "eSOAPVC") as? eSOAPVC
         self.navigationController?.pushViewController(vc!, animated: true)*/

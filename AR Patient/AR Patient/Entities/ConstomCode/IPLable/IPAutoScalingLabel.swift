@@ -103,6 +103,13 @@ class IPAutoScalingLabel: UILabel {
         } else if self.tag == 123 { // White gray Text
             self.textColor = UIColor.init(named: "Color_White")
             self.font = UIFont.init(name: Theme.Font.Bold, size: Theme.Font.size.TxtSize_13)
+        } else if self.tag == 124 { // Light Blue Text
+            self.textColor = UIColor.init(named: "Color_LightBlue")
+            self.font = UIFont.init(name: Theme.Font.Regular, size: Theme.Font.size.TxtSize_13)
+            self.backgroundColor = UIColor.init(named: "Color_DEE9FF")
+        } else if self.tag == 125 { // 11306A Text
+            self.textColor = UIColor.init(named: "Color_11306A")
+            self.font = UIFont.init(name: Theme.Font.SemiBold, size: Theme.Font.size.lblSize)
         }
     }
 }

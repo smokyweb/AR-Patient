@@ -2,7 +2,7 @@
 //  CheckBox.swift
 //  ShowOff
 //
-//  Created by silicon on 07/10/19.
+//  Created by Knoxweb on 07/10/19.
 //
 
 import UIKit

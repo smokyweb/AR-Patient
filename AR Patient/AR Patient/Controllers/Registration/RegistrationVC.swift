@@ -2,8 +2,8 @@
 //  RegistrationVC.swift
 //  AR Patient
 //
-//  Created by Silicon on 27/04/20.
-//  Copyright © 2020 Silicon. All rights reserved.
+//  Created by Knoxweb on 27/04/20.
+//  Copyright © 2020 Knoxweb. All rights reserved.
 //
 
 import UIKit

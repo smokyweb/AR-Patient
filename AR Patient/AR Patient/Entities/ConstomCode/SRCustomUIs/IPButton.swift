@@ -148,6 +148,18 @@ class IPButton: UIButton {
             self.titleLabel?.textColor = UIColor.init(named: "Color_DarkBlue")
             self.titleLabel?.font = UIFont.init(name: Theme.Font.SemiBold, size: Theme.Font.size.btnSize)
             self.tintColor = UIColor.init(named: "Color_DarkBlue")
+        } else if self.tag == 106 { // Blue BG & White Text
+            self.layer.cornerRadius = self.frame.height/2
+            self.layer.masksToBounds = true
+            self.backgroundColor = UIColor.init(named: "Color_LightBlue")
+            self.titleLabel?.textColor = UIColor.init(named: "Color_White")
+            self.titleLabel?.font = UIFont.init(name: Theme.Font.Bold, size: Theme.Font.size.TxtSize_11)
+            self.tintColor = UIColor.init(named: "Color_White")
+        } else if self.tag == 107 { // clear BG & Blue Text
+            self.backgroundColor = .clear
+            self.titleLabel?.textColor = UIColor.init(named: "Color_LightBlue")
+            self.titleLabel?.font = UIFont.init(name: Theme.Font.Bold, size: Theme.Font.size.btnSize)
+            self.tintColor = UIColor.init(named: "Color_LightBlue")
         }
         
     }

@@ -21,5 +21,6 @@ target 'AR Patient' do
   pod 'SFProgressCircle'
   pod "DrawerView"
   pod 'googleapis', :path => '.'
+  pod 'SwiftyStoreKit'
 
 end

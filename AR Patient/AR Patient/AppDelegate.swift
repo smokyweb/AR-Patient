@@ -2,18 +2,20 @@
 //  AppDelegate.swift
 //  AR Patient
 //
-//  Created by Silicon on 23/04/20.
-//  Copyright © 2020 Silicon. All rights reserved.
+//  Created by Knoxweb on 23/04/20.
+//  Copyright © 2020 Knoxweb. All rights reserved.
 //
 
 import UIKit
 import IQKeyboardManagerSwift
+import SwiftyStoreKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var navController:UINavigationController = UINavigationController()
+    var isLive = 0 //0=Sandbox 1=Live
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -22,6 +24,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //CONFIGURE FIREBASE SETUP
         setUpFireBaseNotification()
+        
+        SwiftyStoreKit.completeTransactions(atomically: false) { purchases in
+            for purchase in purchases {
+                switch purchase.transaction.transactionState {
+                case .purchased, .restored:
+                    if purchase.needsFinishTransaction {
+                        // Deliver content from server, then:
+                        SwiftyStoreKit.finishTransaction(purchase.transaction)
+                    }
+                    // Unlock content
+                case .failed, .purchasing, .deferred:
+                    break // do nothing
+                }
+            }
+        }
         
         if Global.kretriveUserData().role == ""{
             Singleton.shared.saveToUserDefaults(value: "N/A", forKey: kUser.role)

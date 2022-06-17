@@ -1,0 +1,67 @@
+{
+  "products" : [
+
+  ],
+  "settings" : {
+
+  },
+  "subscriptionGroups" : [
+    {
+      "id" : "8DAF2FC5",
+      "localizations" : [
+
+      ],
+      "name" : "Subscription",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [
+
+          ],
+          "displayPrice" : "4.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "6ED90E59",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "",
+              "displayName" : "",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "com.ar.patient.silver",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "Silver Plan",
+          "subscriptionGroupID" : "8DAF2FC5",
+          "type" : "RecurringSubscription"
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "displayPrice" : "9.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "7419D99D",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "",
+              "displayName" : "",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "com.ar.patient.gold",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "Gold Plan",
+          "subscriptionGroupID" : "8DAF2FC5",
+          "type" : "RecurringSubscription"
+        }
+      ]
+    }
+  ],
+  "version" : {
+    "major" : 1,
+    "minor" : 0
+  }
+}

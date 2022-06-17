@@ -2,8 +2,8 @@
 //  ExamHelpVC.swift
 //  AR Patient
 //
-//  Created by Krupali on 02/05/20.
-//  Copyright © 2020 Silicon. All rights reserved.
+//  Created by Knoxweb on 02/05/20.
+//  Copyright © 2020 Knoxweb. All rights reserved.
 //
 
 import UIKit
@@ -69,6 +69,11 @@ extension ExamHelpVC: UITableViewDataSource, UITableViewDelegate{
         let data = self.arrData[indexPath.row]
         
         cell.lblQuestion.text = data.question
+        if(data.is_mandatory == "1") {
+            cell.imgStar.isHidden = false
+        } else {
+            cell.imgStar.isHidden = true
+        }
         
         cell.selectionStyle = .none
         return cell

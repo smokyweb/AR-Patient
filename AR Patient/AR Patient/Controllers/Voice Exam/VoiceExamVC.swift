@@ -2,8 +2,8 @@
 //  VoiceExamVC.swift
 //  AR Patient
 //
-//  Created by Silicon on 02/05/20.
-//  Copyright © 2020 Silicon. All rights reserved.
+//  Created by Knoxweb on 02/05/20.
+//  Copyright © 2020 Knoxweb. All rights reserved.
 //
 
 import UIKit
@@ -132,6 +132,29 @@ class VoiceExamVC: UIViewController, SFSpeechRecognizerDelegate {
     override func viewDidDisappear(_ animated: Bool) {
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.enableAutoToolbar = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.removeMemory()
+    }
+    
+    func removeMemory() {
+        self.arrData.removeAll()
+        self.arrData = []
+        self.arrStudentData.removeAll()
+        self.arrStudentData = []
+        self.arrChatData.removeAll()
+        self.arrChatData = []
+        self.exceptionalWords.removeAll()
+        self.exceptionalWords = []
+        self.arrBodyParts.removeAll()
+        self.arrBodyParts = []
+        
+        self.cancelRecording()
+        self.isRecording = false
+        self.sceneView = nil
+        self.recognitionRequest = nil
+        self.recognitionTask = nil
     }
     
     @objc func keyboardWillShow(notification: NSNotification) {

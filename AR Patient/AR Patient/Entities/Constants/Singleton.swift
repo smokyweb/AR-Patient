@@ -24,6 +24,18 @@ class Singleton: NSObject {
     var isChatDetailActive : Bool = false
     var room_id : String = ""
     var approval_status : Int = 0
+    var arrAllBodyParts = [BodyPartsModel]()
+    
+    var arrSubscriptionData: [String] = []
+    var subscription_content = ""
+    var subscription_title = ""
+    var subscription_exp_date = ""
+    var subscription_bundle_id = ""
+    var subscription_platform = ""
+    var subscription_token = ""
+    var is_subscribed = "0"
+    var is_trial = ""
+    
     
     var isLocationEnabled:Bool = false
     var isAlertPresented:Bool = false

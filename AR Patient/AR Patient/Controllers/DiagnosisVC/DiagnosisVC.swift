@@ -2,8 +2,8 @@
 //  DiagnosisVC.swift
 //  AR Patient
 //
-//  Created by Silicon on 05/05/20.
-//  Copyright © 2020 Silicon. All rights reserved.
+//  Created by Knoxweb on 05/05/20.
+//  Copyright © 2020 Knoxweb. All rights reserved.
 //
 
 import UIKit
@@ -19,14 +19,22 @@ class DiagnosisVC: UIViewController {
     @IBOutlet weak var viewHeader: UIView!
     @IBOutlet weak var txtDiagnosis: IPTextField!
     @IBOutlet weak var txtSummary: IPTextView!
+    @IBOutlet weak var txtObjective: IPTextView!
+    @IBOutlet weak var txtAssessment: IPTextView!
+    @IBOutlet weak var txtPlan: IPTextView!
     @IBOutlet weak var btnSubmit: IPButton!
+    @IBOutlet weak var imgOverlay: UIImageView!
+    @IBOutlet weak var viewOverlay: UIView!
     
     var test_id : String = ""
     var patient_id : String = ""
     var tag : Int = 1 //1 = Submit Exam & 2 = Without Submitting Exam
     var delegate: DiagnosisDelegate?
     var diagnosis : String = ""
-    var notes : String = ""
+    var subjective : String = ""
+    var objective : String = ""
+    var assessment : String = ""
+    var plan : String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,17 +46,13 @@ class DiagnosisVC: UIViewController {
         
         self.txtDiagnosis.delegate = self
         self.txtSummary.delegate = self
+        self.txtObjective.delegate = self
+        self.txtAssessment.delegate = self
+        self.txtPlan.delegate = self
             
         self.txtDiagnosis.withoutImage(direction: .Left, colorSeparator: UIColor.clear, colorBorder: UIColor.clear)
         
-        if(self.notes == "") {
-            self.txtSummary.text = "Soap Notes"
-            self.txtSummary.tag = 102
-        } else {
-            self.txtSummary.text = self.notes
-            txtSummary.tag = 101
-            txtSummary.textColor = UIColor.init(named: "Color_Black")
-        }
+        self.setUpPlaceHolder()
         
         self.txtDiagnosis.text = self.diagnosis
         
@@ -60,14 +64,7 @@ class DiagnosisVC: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        if(self.notes == "") {
-            self.txtSummary.text = "Soap Notes"
-            self.txtSummary.tag = 102
-        } else {
-            self.txtSummary.text = self.notes
-            txtSummary.tag = 101
-            txtSummary.textColor = UIColor.init(named: "Color_Black")
-        }
+        self.setUpPlaceHolder()
         
         self.txtDiagnosis.text = self.diagnosis
     }
@@ -78,14 +75,7 @@ class DiagnosisVC: UIViewController {
         self.txtDiagnosis.layer.cornerRadius = self.txtDiagnosis.frame.height/2
         self.txtDiagnosis.layer.masksToBounds = true
         
-        if(self.notes == "") {
-            self.txtSummary.text = "Soap Notes"
-            self.txtSummary.tag = 102
-        } else {
-            self.txtSummary.text = self.notes
-            txtSummary.tag = 101
-            txtSummary.textColor = UIColor.init(named: "Color_Black")
-        }
+        self.setUpPlaceHolder()
         
         self.txtDiagnosis.text = self.diagnosis
     }
@@ -100,6 +90,16 @@ class DiagnosisVC: UIViewController {
         self.validationInfo()
     }
     
+    @IBAction func btnInfo(_ sender: UIButton) {
+        self.imgOverlay.isHidden = false
+        self.viewOverlay.isHidden = false
+    }
+    
+    @IBAction func btnClose(_ sender: UIButton) {
+        self.imgOverlay.isHidden = true
+        self.viewOverlay.isHidden = true
+    }
+    
     func validationInfo() {
         self.view.endEditing(true)
         
@@ -111,12 +111,50 @@ class DiagnosisVC: UIViewController {
             return
         }
         
-        guard strSummary.count > 0 && strSummary != "Soap Notes" else{
-            AJAlertController.initialization().showAlertWithOkButton(aStrMessage: "Please enter SOAP notes.") { (index, title) in }
+        guard strSummary.count > 0 && strSummary != "Subjective Notes" else{
+            AJAlertController.initialization().showAlertWithOkButton(aStrMessage: "Please enter Subjective notes.") { (index, title) in }
             return
         }
         
         self.testDiagnosisAPI()
+    }
+    
+    func setUpPlaceHolder() {
+        if(self.subjective == "") {
+            self.txtSummary.text = "Subjective Notes"
+            self.txtSummary.tag = 102
+        } else {
+            self.txtSummary.text = self.subjective
+            txtSummary.tag = 101
+            txtSummary.textColor = UIColor.init(named: "Color_Black")
+        }
+        
+        if(self.objective == "") {
+            self.txtObjective.text = "Objective Notes"
+            self.txtObjective.tag = 102
+        } else {
+            self.txtObjective.text = self.objective
+            txtObjective.tag = 101
+            txtObjective.textColor = UIColor.init(named: "Color_Black")
+        }
+        
+        if(self.assessment == "") {
+            self.txtAssessment.text = "Assessment Notes"
+            self.txtAssessment.tag = 102
+        } else {
+            self.txtAssessment.text = self.assessment
+            txtAssessment.tag = 101
+            txtAssessment.textColor = UIColor.init(named: "Color_Black")
+        }
+        
+        if(self.plan == "") {
+            self.txtPlan.text = "Plan Notes"
+            self.txtPlan.tag = 102
+        } else {
+            self.txtPlan.text = self.plan
+            txtPlan.tag = 101
+            txtPlan.textColor = UIColor.init(named: "Color_Black")
+        }
     }
 }
 
@@ -127,18 +165,42 @@ extension DiagnosisVC : UITextFieldDelegate, UITextViewDelegate {
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {
-        if txtSummary.text == "Soap Notes" {
+        if txtSummary.text == "Subjective Notes" {
             txtSummary.text = ""
             txtSummary.tag = 101
             txtSummary.textColor = UIColor.init(named: "Color_Black")
+        } else if txtObjective.text == "Objective Notes" {
+            txtObjective.text = ""
+            txtObjective.tag = 101
+            txtObjective.textColor = UIColor.init(named: "Color_Black")
+        } else if txtAssessment.text == "Assessment Notes" {
+            txtAssessment.text = ""
+            txtAssessment.tag = 101
+            txtAssessment.textColor = UIColor.init(named: "Color_Black")
+        } else if txtPlan.text == "Plan Notes" {
+            txtPlan.text = ""
+            txtPlan.tag = 101
+            txtPlan.textColor = UIColor.init(named: "Color_Black")
         }
     }
 
     func textViewDidEndEditing(_ textView: UITextView) {
         if txtSummary.text == "" {
-            txtSummary.text = "Soap Notes"
+            txtSummary.text = "Subjective Notes"
             txtSummary.tag = 102
             txtSummary.textColor = UIColor.lightGray
+        } else if txtObjective.text == "" {
+            txtObjective.text = "Objective Notes"
+            txtObjective.tag = 102
+            txtObjective.textColor = UIColor.lightGray
+        } else if txtAssessment.text == "" {
+            txtAssessment.text = "Assessment Notes"
+            txtAssessment.tag = 102
+            txtAssessment.textColor = UIColor.lightGray
+        } else if txtPlan.text == "" {
+            txtPlan.text = "Plan Notes"
+            txtPlan.tag = 102
+            txtPlan.textColor = UIColor.lightGray
         }
     }
     
@@ -153,7 +215,10 @@ extension DiagnosisVC{
         paramer["user_id"] = Global.kretriveUserData().User_Id!
         paramer["test_id"] = self.test_id
         paramer["diagnosis"] = self.txtDiagnosis.text!
-        paramer["notes"] = self.txtSummary.text!
+        paramer["subjective"] = self.txtSummary.text!
+        paramer["objective"] = self.txtObjective.text!
+        paramer["assessment"] = self.txtAssessment.text!
+        paramer["plan"] = self.txtPlan.text!
         paramer["patient_id"] = self.patient_id
         paramer["sys_time"] = Date().dateTimeString(withFormate: "yyyy-MM-dd HH:mm:ss")
 

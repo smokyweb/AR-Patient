@@ -2,8 +2,8 @@
 //  WebViewController.swift
 //  AR Patient
 //
-//  Created by Krupali on 28/04/20.
-//  Copyright © 2020 Silicon. All rights reserved.
+//  Created by Knoxweb on 28/04/20.
+//  Copyright © 2020 Knoxweb. All rights reserved.
 //
 
 import UIKit

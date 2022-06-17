@@ -71,7 +71,7 @@ vm_size_t FIRCLSHostGetPageSize(void) {
 
   int maxNativePageSize = CLS_MAX_NATIVE_PAGE_SIZE;
 
-  // On Apple Silicon, we need to use the arm64 page size
+  // On Apple Knoxweb, we need to use the arm64 page size
   // even if we're in x86 land.
   if (FIRCLSHostIsRosettaTranslated()) {
     FIRCLSSDKLog("Running under Rosetta 2 emulation. Using the arm64 page size.\n");
@@ -105,7 +105,7 @@ vm_size_t FIRCLSHostGetPageSize(void) {
 }
 
 // This comes from the Apple documentation here:
-// https://developer.apple.com/documentation/apple_silicon/about_the_rosetta_translation_environment
+// https://developer.apple.com/documentation/apple_Knoxweb/about_the_rosetta_translation_environment
 bool FIRCLSHostIsRosettaTranslated() {
 #if TARGET_OS_MAC
   int result = 0;
@@ -158,6 +158,8 @@ static void FIRCLSHostWriteOSVersionInfo(FIRCLSFile* file) {
   FIRCLSFileWriteHashEntryString(file, "os_display_version",
                                  [FIRCLSHostOSDisplayVersion() UTF8String]);
   FIRCLSFileWriteHashEntryString(file, "platform", [FIRCLSApplicationGetPlatform() UTF8String]);
+  FIRCLSFileWriteHashEntryString(file, "firebase_platform",
+                                 [FIRCLSApplicationGetFirebasePlatform() UTF8String]);
 }
 
 bool FIRCLSHostRecord(FIRCLSFile* file) {

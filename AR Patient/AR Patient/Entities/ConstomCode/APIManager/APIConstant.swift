@@ -26,8 +26,8 @@ struct APIConstant {
     }
     
     private struct developement {
-        static let baseUrl  = "http://arpatient.betaplanets.com"
-        private static let appVersion   = "v9"
+        static let baseUrl  = "https://arpatientsapp.com/"//http://arpatient.betaplanets.com"
+        private static let appVersion   = "v17"
         static let APIURL  = "\(baseUrl)/wp-json/\(appVersion)"
     }
     
@@ -45,7 +45,7 @@ struct APIConstant {
         }
     }
 
-    static let mediaURL = "http://arpatient.betaplanets.com"
+    static let mediaURL = "https://arpatientsapp.com/"//"http://arpatient.betaplanets.com"
     
     
     /// Structure for URL. This will have the API end point for the server.
@@ -105,41 +105,7 @@ struct APIConstant {
         static let myProfile         = "/users/profile"
         static let practExam         = "/tests/pe_definition"
         static let practExamSubmit   = "/tests/pe_submit"
-
+        static let inAppPurchse      = "/inapp_purchase/create"
         
-        
-//        static let sync_master       = "/init/sync_master"
-//        static let searchBusiness    = "/init/search_business"
-//        static let setIdentity       = "/trucker/set_identity"
-//        static let sync_user         = "/init/sync_user"
-//        static let onlineStatus      = "/trucker/online_status"
-//        static let tripCreate        = "/trip/create"
-//        static let acceptTracking    = "/trip/accept_tracking"
-//        static let deniedTracking    = "/trip/denied_tracking"
-//        static let stopTracking      = "/trip/stop_tracking"
-//        static let changeLocation    = "/trucker/change_location"
-//        static let arrivedPickup     = "/trip/arrived_at_pickup"
-//        static let pickup            = "/trip/pickup"
-//        static let arrivedDropoff    = "/trip/arrived_at_dropoff"
-//        static let dropoff           = "/trip/dropoff"
-//        static let CMS               = "/init/cms"
-//        static let contactUs         = "/users/contact_us"
-//        static let myProfile         = "/users/myprofile"
-//        static let editProfile       = "/trucker/edit_profile"
-//        static let tripHistory       = "/trip/history"
-//        static let tripDetail        = "/trip/detail"
-//        static let notifications     = "/users/notifications"
-//        static let blogsList         = "/blogs/list"
-//        static let blogsView         = "/blogs/view"
-//        static let searchTrucker     = "/business/search_trucker"
-//        static let chatRoom          = "/chat/rooms"
-//        static let sendChat          = "/chat/send"
-//        static let chatConversation  = "/chat/conversation"
-//        static let chatDeleteRoom    = "/chat/delete_room"
-//        static let chatDeleteConversation    = "/chat/delete_conversation"
-//        static let tripCancel        = "/trip/cancel"
-//        static let deleteNotifications       = "/users/delete_notification"
-//        static let deleteAllNotifications    = "/users/delete_all_notifications"
-//        static let selectParking     = "/trip/select_parking"
     }
 }

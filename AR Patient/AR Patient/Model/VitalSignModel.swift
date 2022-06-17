@@ -2,8 +2,8 @@
 //  VitalSignModel.swift
 //  AR Patient
 //
-//  Created by Silicon on 02/07/20.
-//  Copyright © 2020 Silicon. All rights reserved.
+//  Created by Knoxweb on 02/07/20.
+//  Copyright © 2020 Knoxweb. All rights reserved.
 //
 
 import UIKit

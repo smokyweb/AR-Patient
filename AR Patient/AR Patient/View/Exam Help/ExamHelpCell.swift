@@ -2,8 +2,8 @@
 //  ExamHelpCell.swift
 //  AR Patient
 //
-//  Created by Krupali on 02/05/20.
-//  Copyright © 2020 Silicon. All rights reserved.
+//  Created by Knoxweb on 02/05/20.
+//  Copyright © 2020 Knoxweb. All rights reserved.
 //
 
 import UIKit
@@ -13,6 +13,7 @@ class ExamHelpCell: UITableViewCell {
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var arrowView: UIView!
     @IBOutlet weak var lblQuestion: IPAutoScalingLabel!
+    @IBOutlet weak var imgStar: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

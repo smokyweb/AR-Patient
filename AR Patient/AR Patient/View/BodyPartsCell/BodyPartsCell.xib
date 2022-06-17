@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BodyPartsCell" rowHeight="101" id="KGk-i7-Jjw" customClass="BodyPartsCell" customModule="AR_Patient" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="376" height="101"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="376" height="101"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="green_check_icon" translatesAutoresizingMaskIntoConstraints="NO" id="RwZ-jL-IIE">
+                        <rect key="frame" x="5" y="43" width="15" height="15"/>
+                        <color key="tintColor" name="Color_Green"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="15" id="jsn-hm-h69"/>
+                            <constraint firstAttribute="height" constant="15" id="oa6-R3-0nq"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" tag="112" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Osj-hY-L6A" customClass="IPAutoScalingLabel" customModule="AR_Patient" customModuleProvider="target">
+                        <rect key="frame" x="45" y="10" width="321" height="81"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Osj-hY-L6A" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="6aK-eZ-GYV"/>
+                    <constraint firstAttribute="trailing" secondItem="Osj-hY-L6A" secondAttribute="trailing" constant="10" id="CWk-cE-qGw"/>
+                    <constraint firstItem="RwZ-jL-IIE" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="H19-CR-JJs"/>
+                    <constraint firstAttribute="bottom" secondItem="Osj-hY-L6A" secondAttribute="bottom" constant="10" id="U7x-Hz-2oW"/>
+                    <constraint firstItem="RwZ-jL-IIE" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="cK3-nr-qu6"/>
+                    <constraint firstItem="Osj-hY-L6A" firstAttribute="centerY" secondItem="RwZ-jL-IIE" secondAttribute="centerY" id="oTA-iT-YaS"/>
+                    <constraint firstItem="Osj-hY-L6A" firstAttribute="leading" secondItem="RwZ-jL-IIE" secondAttribute="trailing" constant="25" id="qCm-dp-FY7"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="img" destination="RwZ-jL-IIE" id="Gxw-C7-1Zr"/>
+                <outlet property="lblTitle" destination="Osj-hY-L6A" id="ZXG-cO-9m5"/>
+            </connections>
+            <point key="canvasLocation" x="140.57971014492756" y="114.84375"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="green_check_icon" width="800" height="800"/>
+        <namedColor name="Color_Green">
+            <color red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

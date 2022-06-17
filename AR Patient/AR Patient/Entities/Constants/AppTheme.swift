@@ -89,7 +89,7 @@ class Theme: NSObject {
 
 struct Google {
     struct maps {
-        static let keys = "AIzaSyBelqKx1Bih5mj-ijy3SZip8ksEpjE7zMg" // GIVEN BY UMANG SIR:- 09/08/2019
+        static let keys = "AIzaSyBelqKx1Bih5mj-ijy3SZip8ksEpjE7zMg" // GIVEN BY Knoxweb SIR:- 09/08/2019
     }
     
     struct firebase {

@@ -2,7 +2,7 @@
 //  IPImageView.swift
 //  ShowOff
 //
-//  Created by silicon on 05/10/19.
+//  Created by Knoxweb on 05/10/19.
 //
 
 import Foundation

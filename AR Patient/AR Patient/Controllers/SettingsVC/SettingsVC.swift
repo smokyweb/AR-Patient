@@ -2,8 +2,8 @@
 //  SettingsVC.swift
 //  AR Patient
 //
-//  Created by Silicon on 31/07/20.
-//  Copyright © 2020 Silicon. All rights reserved.
+//  Created by Knoxweb on 31/07/20.
+//  Copyright © 2020 Knoxweb. All rights reserved.
 //
 
 import UIKit
@@ -29,7 +29,7 @@ class SettingsVC: UIViewController {
         
         self.generateMenu(menu: "Edit Profile", icon: "Profile", selected: false, tag: 1)
         self.generateMenu(menu: "Change Password", icon: "Password", selected: false, tag: 11)
-        self.generateMenu(menu: "Delete Accout", icon: "Delete", selected: false, tag: 8)
+        self.generateMenu(menu: "Delete Account", icon: "Delete", selected: false, tag: 8)
         self.generateMenu(menu: "Logout", icon: "Logout", selected: false, tag: 9)
         
         tableView.register(UINib(nibName: "MenuCell", bundle: nil), forCellReuseIdentifier: "MenuCell")

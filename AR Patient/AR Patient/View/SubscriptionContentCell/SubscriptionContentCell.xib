@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SubscriptionContentCell" rowHeight="94" id="KGk-i7-Jjw" customClass="SubscriptionContentCell" customModule="AR_Patient" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="382" height="94"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="382" height="94"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AO5-VC-0N2">
+                        <rect key="frame" x="0.0" y="10" width="382" height="74"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="green_check_icon" translatesAutoresizingMaskIntoConstraints="NO" id="UhY-fa-2vf">
+                                <rect key="frame" x="10" y="22" width="30" height="30"/>
+                                <color key="tintColor" name="Color_11306A"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="NbW-rC-HBS"/>
+                                    <constraint firstAttribute="height" constant="30" id="NsL-ZF-qEe"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" tag="107" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem ipsum dolor sit amet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="biJ-Mf-zt9" customClass="IPAutoScalingLabel" customModule="AR_Patient" customModuleProvider="target">
+                                <rect key="frame" x="50" y="10" width="322" height="54"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="UhY-fa-2vf" firstAttribute="leading" secondItem="AO5-VC-0N2" secondAttribute="leading" constant="10" id="6C5-ZK-0w6"/>
+                            <constraint firstItem="UhY-fa-2vf" firstAttribute="centerY" secondItem="AO5-VC-0N2" secondAttribute="centerY" id="EOP-4A-Vna"/>
+                            <constraint firstAttribute="trailing" secondItem="biJ-Mf-zt9" secondAttribute="trailing" constant="10" id="Hpq-NO-SAb"/>
+                            <constraint firstAttribute="bottom" secondItem="biJ-Mf-zt9" secondAttribute="bottom" constant="10" id="K88-5V-C17"/>
+                            <constraint firstItem="biJ-Mf-zt9" firstAttribute="centerY" secondItem="UhY-fa-2vf" secondAttribute="centerY" id="Lrg-op-Rdj"/>
+                            <constraint firstItem="biJ-Mf-zt9" firstAttribute="leading" secondItem="UhY-fa-2vf" secondAttribute="trailing" constant="10" id="ZzO-5k-OV0"/>
+                            <constraint firstItem="biJ-Mf-zt9" firstAttribute="top" secondItem="AO5-VC-0N2" secondAttribute="top" constant="10" id="y01-ti-VPf"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                <real key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                <color key="value" name="Color_6F6F72"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="AO5-VC-0N2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="M5C-XS-LlS"/>
+                    <constraint firstAttribute="bottom" secondItem="AO5-VC-0N2" secondAttribute="bottom" constant="10" id="hlU-Ar-AVm"/>
+                    <constraint firstItem="AO5-VC-0N2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="i79-e3-81F"/>
+                    <constraint firstAttribute="trailing" secondItem="AO5-VC-0N2" secondAttribute="trailing" id="nsL-xc-5c4"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="icon" destination="UhY-fa-2vf" id="TZI-GY-B7P"/>
+                <outlet property="lblContent" destination="biJ-Mf-zt9" id="4FK-ba-TTP"/>
+                <outlet property="mainView" destination="AO5-VC-0N2" id="Kfm-io-obk"/>
+            </connections>
+            <point key="canvasLocation" x="185.50724637681162" y="107.14285714285714"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="green_check_icon" width="800" height="800"/>
+        <namedColor name="Color_11306A">
+            <color red="0.067000001668930054" green="0.18799999356269836" blue="0.41600000858306885" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Color_6F6F72">
+            <color red="0.43500000238418579" green="0.43500000238418579" blue="0.44699999690055847" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

@@ -2,8 +2,8 @@
 //  PhysicalExam3DVC.swift
 //  AR Patient
 //
-//  Created by Silicon on 12/05/20.
-//  Copyright © 2020 Silicon. All rights reserved.
+//  Created by Knoxweb on 12/05/20.
+//  Copyright © 2020 Knoxweb. All rights reserved.
 //
 
 import UIKit
@@ -66,6 +66,7 @@ class PhysicalExam3DVC: UIViewController, UIGestureRecognizerDelegate, SFSpeechR
     //@IBOutlet weak var btnContinue: IPButton!
     @IBOutlet weak var imgArrow: UIImageView!
     @IBOutlet weak var viewRotateInfo: UIView!
+    @IBOutlet weak var topChatTable: NSLayoutConstraint!
     
     var modeUrl : String = ""
     var patient_id : String = ""
@@ -84,6 +85,8 @@ class PhysicalExam3DVC: UIViewController, UIGestureRecognizerDelegate, SFSpeechR
     var hint_text : String = ""
     var pt_name : String = ""
     var detectionTimer : Timer?
+    var arrClickedBodyParts = [BodyPartsModel]()
+    var image_id = 0
     
     /* New */
     var isRecording = false
@@ -121,7 +124,13 @@ class PhysicalExam3DVC: UIViewController, UIGestureRecognizerDelegate, SFSpeechR
         
         self.drawerView.attachTo(view: self.view)
         self.drawerView.snapPositions = [.collapsed, .partiallyOpen]
-        self.drawerView.collapsedHeight = 50
+        if(!self.hasTopNotch) {
+            self.drawerView.collapsedHeight = 50
+            self.topChatTable.constant = 0
+        } else {
+            self.drawerView.collapsedHeight = 20
+            self.topChatTable.constant = 10
+        }
         self.drawerView.partiallyOpenHeight = (UIScreen.main.bounds.size.height / 2) + 50
 //        self.drawerView.layer.cornerRadius = 20
 //        self.drawerView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
@@ -686,7 +695,7 @@ class PhysicalExam3DVC: UIViewController, UIGestureRecognizerDelegate, SFSpeechR
         
         func textToSpeach(text : String){
             let text = AVSpeechUtterance(string: text)
-            if(self.pt_name.lowercased() == "Pediatric Male".lowercased() || self.pt_name.lowercased() == "Adult Male".lowercased()) {
+            if(self.image_id == 4 || self.image_id == 5 || self.image_id == 6 || self.image_id == 7) {
                 text.voice = AVSpeechSynthesisVoice(language: "en-GB")
             } else {
                 text.voice = AVSpeechSynthesisVoice(language: "en-US")
@@ -713,11 +722,13 @@ class PhysicalExam3DVC: UIViewController, UIGestureRecognizerDelegate, SFSpeechR
         }
         
         func calculateAnswer(question: String) {
+            var temp = [VoiceExamModel]()
             let definitionData = VoiceExamModel()
             var maxCount : Int = 0
             
             var arrAskedQuestion = question.lowercased().replacingOccurrences(of: "?", with: "", options: .literal, range: nil).replacingOccurrences(of: ".", with: "", options: .literal, range: nil).replacingOccurrences(of: "!", with: "", options: .literal, range: nil).split(separator: " ")
             arrAskedQuestion = arrAskedQuestion.filter { $0.count > 2 }
+            print("arrAskedQuestion \(arrAskedQuestion)")
             
             for i in self.arrData {
                 let arrQuestion = i.question.lowercased().replacingOccurrences(of: "?", with: "", options: .literal, range: nil).replacingOccurrences(of: ".", with: "", options: .literal, range: nil).replacingOccurrences(of: "!", with: "", options: .literal, range: nil).split(separator: " ")
@@ -728,13 +739,54 @@ class PhysicalExam3DVC: UIViewController, UIGestureRecognizerDelegate, SFSpeechR
                 }
                 
                 if(arrComman.count > 0) {
-                    if(maxCount <= arrComman.count) {
+                    if(maxCount < arrComman.count) {
+                        temp.removeAll()
+                        let data = VoiceExamModel()
                         maxCount = arrComman.count
                         
-                        definitionData.answer = i.answer
-                        definitionData.id = i.id
-                        definitionData.question = question
+                        data.answer = i.answer
+                        data.id = i.id
+                        data.question = i.question
+                        data.is_mandatory = i.is_mandatory
+                        
+                        temp.append(data)
+                    } else if maxCount == arrComman.count {
+                        let data = VoiceExamModel()
+                        maxCount = arrComman.count
+                        
+                        data.answer = i.answer
+                        data.id = i.id
+                        data.question = i.question
+                        data.is_mandatory = i.is_mandatory
+                        
+                        temp.append(data)
                     }
+                }
+            }
+
+            if(temp.count > 0) {
+                var maxRatio : Double = 0.0
+                for i in temp {
+                    let arrQuestion = i.question.lowercased().replacingOccurrences(of: "?", with: "", options: .literal, range: nil).replacingOccurrences(of: ".", with: "", options: .literal, range: nil).replacingOccurrences(of: "!", with: "", options: .literal, range: nil).split(separator: " ")
+                    
+                    let arrComman = arrAskedQuestion.filter { (string) -> Bool in
+                        return arrQuestion.contains(string)
+                    }
+                    
+                    
+                    if(arrComman.count > 0) {
+                        let ratio : Double = Double(arrComman.count / arrQuestion.count)
+                        print("Ratio => \(ratio)")
+                        if(ratio >= maxRatio) {
+                            maxRatio = ratio
+                            
+                            definitionData.answer = i.answer
+                            definitionData.id = i.id
+                            definitionData.question = question
+                            definitionData.is_mandatory = i.is_mandatory
+                        }
+                    }
+                    
                 }
             }
             
@@ -757,7 +809,7 @@ class PhysicalExam3DVC: UIViewController, UIGestureRecognizerDelegate, SFSpeechR
                 self.wrongAnswer = self.wrongAnswer + 1
                 let chatData = ChatModel()
                 chatData.isMe = false
-                chatData.message = "Sorry, patient doesn't have any answer for the asked question."
+                chatData.message = "Can you ask a different question?"
                 
                 self.arrChatData.append(chatData)
                 
@@ -777,7 +829,7 @@ class PhysicalExam3DVC: UIViewController, UIGestureRecognizerDelegate, SFSpeechR
                     self.viewPopupSymptom.isHidden = false
                     self.wrongAnswer = 0
                 } else {
-                    textToSpeach(text : "Sorry, patient doesn't have any answer for the asked question.")
+                    textToSpeach(text : "Can you ask a different question?")
                     
                     self.drawerView.setPosition(.partiallyOpen, animated: true)
                 }
@@ -810,7 +862,17 @@ class PhysicalExam3DVC: UIViewController, UIGestureRecognizerDelegate, SFSpeechR
             
             let matchedData = self.arrBodyParts.filter { $0.name.lowercased() == body_part_name.lowercased() }
             
+            let clickedBodyPartData = Singleton.shared.arrAllBodyParts.filter { $0.name.lowercased() == body_part_name.lowercased() }
+            if clickedBodyPartData.count > 0{
+                let obj = BodyPartsModel()
+                obj.name = clickedBodyPartData[0].name
+                obj.id = clickedBodyPartData[0].id
+                
+                self.arrClickedBodyParts.append(obj)
+            }
+            
             if(matchedData.count == 1) {
+                
                 //if !self.body_parts.contains(matchedData[0].id) {
                     if(self.tag == 2) {
                         let vc = UIStoryboard.init(name: "Development", bundle: Bundle.main).instantiateViewController(withIdentifier: "PhysicalExamVC") as? PhysicalExamVC
@@ -838,7 +900,7 @@ class PhysicalExam3DVC: UIViewController, UIGestureRecognizerDelegate, SFSpeechR
                         }
                         strSymptoms = String(strSymptoms.dropFirst(2))*/
                         
-                        self.lblSymptoms.text = "Symptoms for \(body_part_name.capitalized)"
+                        self.lblSymptoms.text = "Symptoms for \(body_part_name.replacingOccurrences(of: "_", with: " ").capitalized)"
                         
                         /*AJAlertController.initialization().showAlertForLocation(aStrMessage: "\(strSymptoms)", title: "Symptoms for \(body_part_name.capitalized)", completion: { (index, title) in
                             
@@ -858,10 +920,21 @@ class PhysicalExam3DVC: UIViewController, UIGestureRecognizerDelegate, SFSpeechR
                     AJAlertController.initialization().showAlertWithOkButton(aStrMessage: "You have already conducted exam for \(matchedData[0].name.lowercased()). Please choose another body part.") { (index, title) in }
                 }*/
             } else {
-                AJAlertController.initialization().showAlertForLocation(aStrMessage: "It seems all okay! Please choose another body part.", title: body_part_name.capitalized, completion: { (index, title) in })
+                if(body_part_name != "Gown") {
+    //                AJAlertController.initialization().showAlertForLocation(aStrMessage: "It seems all okay! Please choose another body part.", title: body_part_name.capitalized, completion: { (index, title) in })
+                    AJAlertController.initialization().showAlertForLocation(aStrMessage: "It seems all okay! Please choose another body part.", title: body_part_name.replacingOccurrences(of: "_", with: " ").capitalized, completion: { (index, title) in })
+                }
             }
         }
     }
+    
+    var hasTopNotch: Bool {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+            return UIApplication.shared.delegate?.window??.safeAreaInsets.top ?? 0 > 20
+        }
+        return false
+    }
+
     
     func loadModel(url: URL) {
         self.voiceExamAPI()
@@ -901,6 +974,10 @@ class PhysicalExam3DVC: UIViewController, UIGestureRecognizerDelegate, SFSpeechR
     }*/
     
     func processSampleData(_ data: Data) {
+        if(audioData == nil) {
+            audioData = NSMutableData()
+        }
+        
         audioData.append(data)
 
         // We recommend sending samples in 100ms chunks
@@ -1239,6 +1316,7 @@ extension PhysicalExam3DVC {
                                 definitionData.answer = JSON(dictDefinition["answer"]!).stringValue
                                 definitionData.id = JSON(dictDefinition["id"]!).stringValue
                                 definitionData.question = JSON(dictDefinition["question"]!).stringValue
+                                definitionData.is_mandatory = JSON(dictDefinition["is_mandatory"]!).stringValue
                                 
                                 self.arrData.append(definitionData)
                             }
@@ -1275,6 +1353,9 @@ extension PhysicalExam3DVC {
         paramer["test_id"] = self.test_id
         paramer["sys_time"] = Date().dateTimeString(withFormate: "yyyy-MM-dd HH:mm:ss")
         
+        let id = (self.arrClickedBodyParts.map{String($0.id)}).joined(separator: ",")
+        paramer["body_part_ids"] = id
+        
         WebService.call.POST(filePath: APIConstant.Request.voiceExamSubmit, params: paramer, enableInteraction: false, showLoader: true, viewObj: view, onSuccess: { (result, success) in
             
             if let Dict = result as? [String:Any] {
@@ -1285,7 +1366,10 @@ extension PhysicalExam3DVC {
                     let physical_exam_help = JSON(Dict["physical_exam_help"]!).stringValue
                     
                     let diagnosis = JSON(Dict["diagnosis"]!).stringValue
-                    let notes = JSON(Dict["notes"]!).stringValue
+                    let subjective = JSON(Dict["subjective"]!).stringValue
+                    let objective = JSON(Dict["objective"]!).stringValue
+                    let assessment = JSON(Dict["assessment"]!).stringValue
+                    let plan = JSON(Dict["plan"]!).stringValue
                     
                     if let arrBodyParts = Dict["body_parts"] as? NSArray {
                         for arrarrBodyPartsData in arrBodyParts {
@@ -1294,7 +1378,7 @@ extension PhysicalExam3DVC {
                                 
                                 bodyPartsData.id = JSON(dictBodyParts["id"]!).stringValue
                                 bodyPartsData.name = JSON(dictBodyParts["name"]!).stringValue
-                                bodyPartsData.descr = JSON(dictBodyParts["description"]!).stringValue
+//                                bodyPartsData.descr = JSON(dictBodyParts["description"]!).stringValue
                                 bodyPartsData.model = JSON(dictBodyParts["model"]!).stringValue
                                 
                                 self.arrBodyParts.append(bodyPartsData)
@@ -1320,7 +1404,10 @@ extension PhysicalExam3DVC {
                     let vc = UIStoryboard.init(name: "Development", bundle: Bundle.main).instantiateViewController(withIdentifier: "DiagnosisVC") as? DiagnosisVC
                     vc?.test_id = test_id
                     vc?.diagnosis = diagnosis
-                    vc?.notes = notes
+                    vc?.subjective = subjective
+                    vc?.objective = objective
+                    vc?.assessment = assessment
+                    vc?.plan = plan
                     self.navigationController?.pushViewController(vc!, animated: true)
                 }
             }

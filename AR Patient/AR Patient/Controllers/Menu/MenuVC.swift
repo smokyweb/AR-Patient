@@ -2,8 +2,8 @@
 //  MenuVC.swift
 //  AR Patient
 //
-//  Created by Silicon on 29/04/20.
-//  Copyright © 2020 Silicon. All rights reserved.
+//  Created by Knoxweb on 29/04/20.
+//  Copyright © 2020 Knoxweb. All rights reserved.
 //
 
 import UIKit
@@ -29,7 +29,8 @@ class MenuVC: UIViewController {
         // Do any additional setup after loading the view.
         //self.generateMenu(menu: "Edit Profile", icon: "Profile", selected: false, tag: 1)
         //self.generateMenu(menu: "Change Password", icon: "Password", selected: false, tag: 11)
-        self.generateMenu(menu: "News Feed", icon: "News", selected: false, tag: 2)
+        self.generateMenu(menu: "Subscrption", icon: "IAP", selected: false, tag: 12)
+//        self.generateMenu(menu: "News Feed", icon: "News", selected: false, tag: 2)
         self.generateMenu(menu: "Settings", icon: "Setting", selected: false, tag: 3)
         self.generateMenu(menu: "F.A.Q.", icon: "FAQ", selected: false, tag: 5)
         self.generateMenu(menu: "About Us", icon: "About", selected: false, tag: 6)
@@ -128,10 +129,10 @@ extension MenuVC: UITableViewDelegate, UITableViewDataSource {
             if(tag == 1) {
                 let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "EditProfileVC") as? EditProfileVC
                 self.navigationController?.pushViewController(vc!, animated: true)
-            } else if(tag == 2) {
+            } /*else if(tag == 2) {
                 let vc = UIStoryboard.init(name: "Development", bundle: Bundle.main).instantiateViewController(withIdentifier: "NewsFeedVC") as? NewsFeedVC
                 self.navigationController?.pushViewController(vc!, animated: true)
-            } else if(tag == 3) {
+            }*/ else if(tag == 3) {
                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "SettingsVC") as? SettingsVC
                self.navigationController?.pushViewController(vc!, animated: true)
             } else if(tag == 4) {
@@ -176,6 +177,9 @@ extension MenuVC: UITableViewDelegate, UITableViewDataSource {
                 self.navigationController?.pushViewController(vc!, animated: true)
             } else if(tag == 11) {
                 let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "ChangePwdVC") as? ChangePwdVC
+                self.navigationController?.pushViewController(vc!, animated: true)
+            } else if(tag == 12) {
+                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "SubscriptionVC") as? SubscriptionVC
                 self.navigationController?.pushViewController(vc!, animated: true)
             }
         })

@@ -2,8 +2,8 @@
 //  TabBarVC.swift
 //  AR Patient
 //
-//  Created by Silicon on 29/04/20.
-//  Copyright © 2020 Silicon. All rights reserved.
+//  Created by Knoxweb on 29/04/20.
+//  Copyright © 2020 Knoxweb. All rights reserved.
 //
 
 import UIKit

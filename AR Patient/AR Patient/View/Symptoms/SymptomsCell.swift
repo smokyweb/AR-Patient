@@ -2,8 +2,8 @@
 //  SymptomsCell.swift
 //  AR Patient
 //
-//  Created by silicon on 20/10/20.
-//  Copyright © 2020 Silicon. All rights reserved.
+//  Created by Knoxweb on 20/10/20.
+//  Copyright © 2020 Knoxweb. All rights reserved.
 //
 
 import UIKit

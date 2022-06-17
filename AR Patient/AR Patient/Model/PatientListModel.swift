@@ -2,8 +2,8 @@
 //  PatientListModel.swift
 //  AR Patient
 //
-//  Created by Krupali on 30/04/20.
-//  Copyright © 2020 Silicon. All rights reserved.
+//  Created by Knoxweb on 30/04/20.
+//  Copyright © 2020 Knoxweb. All rights reserved.
 //
 
 import Foundation
@@ -21,4 +21,6 @@ class PatientListModel: NSObject{
     var vital_signs = [VitalSignModel]()
     var arrBodyParts = [BodyPartsModel]()
     var hint_text : String = ""
+    var image_id : Int = 0
+    var user_type : Int = 0
 }

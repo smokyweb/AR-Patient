@@ -2,8 +2,8 @@
 //  TestResultsCell.swift
 //  AR Patient
 //
-//  Created by Krupali on 06/05/20.
-//  Copyright © 2020 Silicon. All rights reserved.
+//  Created by Knoxweb on 06/05/20.
+//  Copyright © 2020 Knoxweb. All rights reserved.
 //
 
 import UIKit

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.ar.patient.uc.SlcTextView
+                android:id="@+id/txtvitalsName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:tag="100"
+                android:text="Fever,Runny nose"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_9sdp" />
+
+            <com.ar.patient.uc.SlcTextView
+                android:id="@+id/txtvitalsvalue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:tag="100"
+                android:text="Fever,Runny nose"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_9sdp" />
+        </LinearLayout>
+
+    </RelativeLayout>
+</layout>

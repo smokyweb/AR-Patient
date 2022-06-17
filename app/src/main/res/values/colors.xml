@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="colorPrimary">#0F2F6C</color>
+    <color name="colorPrimaryDark">#11367E</color>
+    <color name="kprogresshud_default_color">#ffffff</color>
+    <color name="end_color">#700D4C</color>
+
+    <color name="color_light_sky">#9BBEFC</color>
+    <color name="color_light_blue">#1B58CB</color>
+    <color name="color_full_blue">#11306A</color>
+    <color name="color_light_green">#00BBB7</color>
+    <color name="full_black">#000000</color>
+    <color name="forgot_passwprd_text_bg_color">#05132D</color>
+    <color name="color_light">#DEE9FF</color>
+    <color name="color_light_green_new">#89F3FA</color>
+    <color name="color_light_blue_new">#1B58CB</color>
+    <color name="color_light_blue_new2">#B5F5FA</color>
+    <color name="color_gray">#D8D8D8</color>
+    <color name="gray">#A29F9F</color>
+    <color name="darkgray">#666262</color>
+    <color name="colorblue">#005BC3</color>
+    <color name="home_screen_back_color">#DEE9FD</color>
+    <color name="allow_user_color">#1B58CB</color>
+    <color name="bubble_color">#9BBEFC</color>
+
+    <color name="home_screen_bg">#DEE9FF</color>
+
+    <color name="patient_exam_screen_bg_color">#05132D</color>
+    <color name="patient_exam_tip_bg_color">#0F2F6C</color>
+    <color name="green">#34C759</color>
+    <color name="red">#D10F0F</color>
+<color name="orange">#FC9620</color>
+    <color name="semi_trans">#99000000</color>
+
+</resources>

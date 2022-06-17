@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/home_screen_back_color"
+        tools:context=".activity.MyProfileActivity">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="?actionBarSize"
+                    android:background="@drawable/terms_header">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/imgBack"
+                        android:layout_width="@dimen/_28sdp"
+                        android:layout_height="@dimen/_28sdp"
+                        android:layout_margin="@dimen/_6sdp"
+                        android:adjustViewBounds="true"
+                        android:padding="@dimen/_8sdp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/back_white" />
+
+                    <com.ar.patient.uc.SlcTextView
+                        android:id="@+id/tvforgotPassword"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:tag="200"
+                        android:text="@string/contact_us"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_13sdp" />
+
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:orientation="vertical">
+
+                    <com.ar.patient.uc.SlcTextView
+                        android:id="@+id/tvfaqtitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:layout_margin="@dimen/_8sdp"
+                        android:gravity="center_vertical"
+                        android:tag="100"
+                        android:text="@string/contact_us_msg"
+                        android:textAllCaps="false"
+                        android:textColor="@color/color_light_blue"
+                        android:textSize="@dimen/_11sdp" />
+
+                    <com.ar.patient.uc.SlcEditTextView
+                        android:id="@+id/EdtFullname"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:background="@drawable/white_curved_update_bg"
+                        android:drawablePadding="@dimen/_8sdp"
+                        android:hint="@string/name"
+                        android:cursorVisible="true"
+                        android:imeOptions="actionNext"
+                        android:inputType="textEmailAddress"
+                        android:paddingStart="@dimen/_10sdp"
+                        android:singleLine="true"
+                        android:tag="100"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/gray"
+                        android:textCursorDrawable="@color/gray"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <com.ar.patient.uc.SlcEditTextView
+                        android:id="@+id/EdtEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:background="@drawable/white_curved_update_bg"
+                        android:drawablePadding="@dimen/_8sdp"
+                        android:hint="@string/email"
+                        android:cursorVisible="true"
+                        android:imeOptions="actionDone"
+                        android:inputType="textEmailAddress"
+                        android:paddingStart="@dimen/_10sdp"
+                        android:singleLine="true"
+                        android:tag="100"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/gray"
+                        android:textCursorDrawable="@color/gray"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <com.vicmikhailau.maskededittext.MaskedEditText
+                        android:id="@+id/EdtPhone"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:background="@drawable/white_curved_update_bg"
+                        android:drawablePadding="@dimen/_8sdp"
+                        android:hint="@string/str_phone"
+                        android:cursorVisible="true"
+                        android:imeOptions="actionNext"
+                        android:inputType="number"
+                        android:maxLength="14"
+                        android:paddingStart="@dimen/_10sdp"
+                        android:singleLine="true"
+                        android:tag="100"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/gray"
+                        android:textCursorDrawable="@color/gray"
+                        android:textSize="@dimen/_12sdp"
+                        app:mask="(###) ###-####" />
+
+                    <com.ar.patient.uc.SlcEditTextView
+                        android:id="@+id/Edtmessege"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:background="@drawable/white_curved_bg"
+                        android:drawablePadding="@dimen/_8sdp"
+                        android:gravity="top|left"
+                        android:cursorVisible="true"
+                        android:hint="@string/str_msg"
+                        android:imeOptions="actionDone"
+                        android:inputType="text"
+                        android:minHeight="@dimen/_80sdp"
+                        android:paddingStart="@dimen/_10sdp"
+                        android:paddingTop="@dimen/_5sdp"
+                        android:tag="100"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/gray"
+                        android:textCursorDrawable="@color/gray"
+                        android:textSize="@dimen/_12sdp" />
+
+
+                    <com.ar.patient.uc.SlcButtonView
+                        android:id="@+id/btnSubmit"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:background="@drawable/gradient_buttion"
+                        android:tag="400"
+                        android:text="@string/submit"
+                        android:textAllCaps="true"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_13sdp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </RelativeLayout>
+</layout>

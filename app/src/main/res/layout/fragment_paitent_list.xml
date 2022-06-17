@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/home_screen_back_color">
+
+        <RelativeLayout
+            android:id="@+id/relmain"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_110sdp">
+
+            <RelativeLayout
+                android:id="@+id/reltop"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_80sdp"
+                android:background="@drawable/terms_header"
+                android:orientation="horizontal">
+
+                <com.ar.patient.uc.SlcTextView
+                    android:id="@+id/tvforgotPassword"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:tag="200"
+                    android:text="AR Patients"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_13sdp" />
+
+            </RelativeLayout>
+
+            <com.ar.patient.uc.SlcEditTextView
+                android:id="@+id/edtSearch"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_alignBottom="@+id/reltop"
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:layout_marginRight="@dimen/_20sdp"
+                android:layout_marginBottom="@dimen/_minus20sdp"
+                android:background="@drawable/edittext_white_bg"
+                android:drawableLeft="@drawable/ic_search"
+                android:drawablePadding="@dimen/_8sdp"
+                android:hint="@string/search_by_name"
+                android:imeOptions="actionDone"
+                android:inputType="text"
+                android:maxLines="1"
+                android:paddingStart="@dimen/_15sdp"
+                android:singleLine="true"
+                android:tag="100"
+                android:textColor="@color/gray"
+                android:textColorHint="@color/gray"
+                android:textSize="@dimen/_12sdp" />
+
+        </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recpagelist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/relmain"
+            android:visibility="visible"
+            tools:listitem="@layout/row_patients" />
+
+    </RelativeLayout>
+</layout>

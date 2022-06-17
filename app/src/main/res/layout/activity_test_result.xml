@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/home_screen_back_color"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:background="@drawable/terms_header"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgBack"
+                android:layout_width="@dimen/_28sdp"
+                android:layout_height="@dimen/_28sdp"
+                android:layout_margin="@dimen/_6sdp"
+                android:adjustViewBounds="true"
+                android:padding="@dimen/_8sdp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/back_white" />
+
+            <com.ar.patient.uc.SlcTextView
+                android:id="@+id/tvforgotPassword"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:tag="200"
+                android:text="@string/test_results"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_13sdp" />
+
+
+        </RelativeLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="@dimen/_10sdp">
+
+                <LinearLayout
+                    android:id="@+id/lintop"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="@dimen/_150sdp"
+                        android:layout_height="@dimen/_150sdp"
+                        android:gravity="center">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/circle_white"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ProgressBar
+                                android:id="@+id/progressBar"
+                                style="?android:attr/progressBarStyleHorizontal"
+                                android:layout_width="@dimen/_135sdp"
+                                android:layout_height="@dimen/_135sdp"
+                                android:layout_centerInParent="true"
+                                android:background="@drawable/circle_shape_downloading"
+                                android:indeterminate="false"
+                                android:max="100"
+                                android:progress="60"
+                                android:progressDrawable="@drawable/circular_progress_bar_downloading" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <com.ar.patient.uc.SlcTextView
+                                    android:id="@+id/txtResult"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:gravity="center"
+                                    android:singleLine="true"
+                                    android:tag="400"
+                                    android:text="22.22%"
+                                    android:textAllCaps="false"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textSize="@dimen/_22sdp" />
+
+                                <com.ar.patient.uc.SlcTextView
+                                    android:id="@+id/txtImprovement"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:singleLine="true"
+                                    android:tag="200"
+                                    android:textAllCaps="false"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_9sdp" />
+                            </LinearLayout>
+
+
+                        </RelativeLayout>
+
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lintext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lintop"
+                    android:layout_margin="@dimen/_20sdp"
+                    android:orientation="vertical">
+
+                    <com.ar.patient.uc.SlcTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:tag="500"
+                        android:text="@string/patient_interview_questions"
+                        android:textAllCaps="false"
+                        android:textColor="@color/color_full_blue"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <com.ar.patient.uc.SlcTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:tag="100"
+                        android:text="@string/questions_asked_by_learner"
+                        android:textColor="@color/color_light_blue_new"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <LinearLayout
+                        android:id="@+id/llQuestionsAsked"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:orientation="vertical" />
+
+                    <com.ar.patient.uc.SlcTextView
+                        android:id="@+id/txtNoDataQuestionAsk"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="gone"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:tag="400"
+                        android:gravity="center"
+                        android:text="@string/no_data_available"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_10sdp" />
+
+
+                    <com.ar.patient.uc.SlcTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:tag="100"
+                        android:text="@string/questions_not_asked_that_should_have_been"
+                        android:textColor="@color/color_light_blue_new"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <LinearLayout
+                        android:id="@+id/llQuestionsNotAsked"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:orientation="vertical" />
+
+                    <com.ar.patient.uc.SlcTextView
+                        android:id="@+id/txtNoDataQuestionNotAsk"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="gone"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:tag="400"
+                        android:gravity="center"
+                        android:text="@string/no_data_available"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_10sdp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:background="@color/black" />
+
+                    <com.ar.patient.uc.SlcTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:tag="500"
+                        android:text="@string/physical_exam"
+                        android:textAllCaps="false"
+                        android:textColor="@color/color_full_blue"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <com.ar.patient.uc.SlcTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:tag="100"
+                        android:text="@string/areas_of_the_body_assessed"
+                        android:textColor="@color/color_light_blue_new"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <LinearLayout
+                        android:id="@+id/llAreasOfTheBodyAssessed"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:orientation="vertical" />
+
+                    <com.ar.patient.uc.SlcTextView
+                        android:id="@+id/txtNoDataAreaAssessed"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="gone"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:tag="400"
+                        android:gravity="center"
+                        android:text="@string/no_data_available"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_10sdp" />
+
+                    <com.ar.patient.uc.SlcTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:tag="100"
+                        android:text="@string/areas_of_the_body_that_should_have_been_assessed_but_were_not"
+                        android:textColor="@color/color_light_blue_new"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <LinearLayout
+                        android:id="@+id/llAreasOfTheBodyAssessedNot"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:orientation="vertical" />
+
+                    <com.ar.patient.uc.SlcTextView
+                        android:id="@+id/txtNoDataAreaNotAssessed"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="gone"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:tag="400"
+                        android:gravity="center"
+                        android:text="@string/no_data_available"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_10sdp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:background="@color/black" />
+
+                    <com.ar.patient.uc.SlcTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:tag="500"
+                        android:text="@string/soap_notes1"
+                        android:textAllCaps="false"
+                        android:textColor="@color/color_full_blue"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <com.ar.patient.uc.SlcTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:tag="100"
+                        android:text="@string/soap_note_written_by_learner"
+                        android:textColor="@color/color_light_blue_new"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <com.ar.patient.uc.SlcTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:tag="400"
+                        android:text="@string/subjective_notes"
+                        android:textAllCaps="true"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_10sdp" />
+
+                    <com.ar.patient.uc.SlcTextView
+                        android:id="@+id/txtsubjectivenotes"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:tag="100"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_9sdp" />
+
+                    <com.ar.patient.uc.SlcTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:tag="400"
+                        android:text="@string/objective_notes"
+                        android:textAllCaps="true"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_10sdp" />
+
+                    <com.ar.patient.uc.SlcTextView
+                        android:id="@+id/txtobjectivenotes"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:tag="100"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_9sdp" />
+
+                    <com.ar.patient.uc.SlcTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:tag="400"
+                        android:text="@string/assessment_notes"
+                        android:textAllCaps="true"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_10sdp" />
+
+                    <com.ar.patient.uc.SlcTextView
+                        android:id="@+id/txtassessmentnotes"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:tag="100"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_9sdp" />
+
+                    <com.ar.patient.uc.SlcTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:tag="400"
+                        android:text="@string/plan_notes"
+                        android:textAllCaps="true"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_10sdp" />
+
+                    <com.ar.patient.uc.SlcTextView
+                        android:id="@+id/txtplannotes"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:tag="100"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_9sdp" />
+
+
+                    <com.ar.patient.uc.SlcTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:tag="400"
+                        android:text="@string/soap_note_written_by_me"
+                        android:textColor="@color/color_light_blue_new"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <com.ar.patient.uc.SlcTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:tag="400"
+                        android:text="@string/subjective_notes"
+                        android:textAllCaps="true"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_10sdp" />
+
+                    <com.ar.patient.uc.SlcTextView
+                        android:id="@+id/txtsubjectivenotesByMe"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:tag="100"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_9sdp" />
+
+                    <com.ar.patient.uc.SlcTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:tag="400"
+                        android:text="@string/objective_notes"
+                        android:textAllCaps="true"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_10sdp" />
+
+                    <com.ar.patient.uc.SlcTextView
+                        android:id="@+id/txtobjectivenotesByMe"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:tag="100"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_9sdp" />
+
+                    <com.ar.patient.uc.SlcTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:tag="400"
+                        android:text="@string/assessment_notes"
+                        android:textAllCaps="true"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_10sdp" />
+
+                    <com.ar.patient.uc.SlcTextView
+                        android:id="@+id/txtassessmentnotesByMe"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:tag="100"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_9sdp" />
+
+                    <com.ar.patient.uc.SlcTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:tag="400"
+                        android:text="@string/plan_notes"
+                        android:textAllCaps="true"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_10sdp" />
+
+                    <com.ar.patient.uc.SlcTextView
+                        android:id="@+id/txtplannotesByMe"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:tag="100"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_9sdp" />
+                </LinearLayout>
+
+
+                <com.ar.patient.uc.SlcButtonView
+                    android:id="@+id/btnDone"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_below="@+id/lintext"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:background="@drawable/gradient_buttion"
+                    android:tag="400"
+                    android:text="@string/str_done"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_13sdp" />
+
+
+            </RelativeLayout>
+
+
+        </androidx.core.widget.NestedScrollView>
+
+
+    </LinearLayout>
+</layout>

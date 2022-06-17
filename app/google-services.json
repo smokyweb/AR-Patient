@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "184687481644",
+    "firebase_url": "https://ar-patient.firebaseio.com",
+    "project_id": "ar-patient",
+    "storage_bucket": "ar-patient.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:184687481644:android:7d14e889010aa0a8f6d289",
+        "android_client_info": {
+          "package_name": "com.ar.patient"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "184687481644-9g15co3ek55fr8k530tsdljrr9te5mlo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCh7FtQanQI9G8BLQcGUOxaouJ4Z1bLYOc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "184687481644-9g15co3ek55fr8k530tsdljrr9te5mlo.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "184687481644-j656q4s6klk31d4tpi5i33pqphe8q7qg.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.ar.patient"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
